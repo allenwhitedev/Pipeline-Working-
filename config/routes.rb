@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root 'pages#fb_test1'
+  root 'sessions#new'
 
   match '/pipeline', to: 'pages#pipeline', via: 'get'
 
@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   match '/signin', to: 'sessions#new', via: 'get'
 
   match '/signout', to: 'sessions#destroy', via: 'delete'
+
+  match '/help', to: 'pages#help', via: 'get'
 
   #match '/events', to: 'pages#events', via: 'get'
 

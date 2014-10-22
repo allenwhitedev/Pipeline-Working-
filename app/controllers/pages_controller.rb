@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   def fb_login
   end
 
-  def fb_test1
+  def help
   end
 
   def pipeline
