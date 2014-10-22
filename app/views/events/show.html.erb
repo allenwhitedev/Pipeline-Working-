@@ -1,0 +1,19 @@
+<% provide(:title, @event.title) %>
+<div class="container">
+	<div class="row">
+	  <aside class="span4">
+	    <section>
+	      <h1>
+	        <%= @event.title %>
+	        <%= render 'shared/statse' %>
+	        <%= render 'attend_form' if signed_in? %>
+	        Points: <%= @event.points %> <br>
+	        Checkin code:  <%= @event.checkincode %>
+	      </h1>
+	    </section>
+	  </aside>
+	  <div class="span8">
+	  	
+	  </div>
+	</div>
+</div>
