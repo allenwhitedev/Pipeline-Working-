@@ -1,19 +1,19 @@
 <% provide(:title, @event.title) %>
 <div class="container">
-	<div class="row">
-	  <aside class="span4">
+	
 	    <section>
 	      <h1>
-	        <%= @event.title %>
+
+	        <%= @event.title %><h1>
+	      	<div class="well"><h4><%= @event.comment %><h4></div>  
+	        <div class="well well-lg"><h1>        
 	        <%= render 'shared/statse' %>
+	        Value: <%= pluralize(@event.points, 'pt.', 'pts.')  %> <br>
 	        <%= render 'attend_form' if signed_in? %>
-	        Points: <%= @event.points %> <br>
-	        Checkin code:  <%= @event.checkincode %>
-	      </h1>
+	        
+	        <!-- Checkin code:  <%= @event.checkincode %>-->
+	      </h1></div>
 	    </section>
-	  </aside>
-	  <div class="span8">
-	  	
-	  </div>
-	</div>
+	 
+	 
 </div>
