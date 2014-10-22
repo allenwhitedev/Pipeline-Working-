@@ -30752,3 +30752,332 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 08:52:31
 
 
 Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 08:52:31 -0400
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-22 08:53:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  Rendered shared/_event_form.html.erb (24.8ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m
+  Rendered events/_event.html.erb (3.5ms)
+  Rendered events/index.html.erb within layouts/application (36.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'db87593d10c5e6b52bd7b028c890ec2c222d78d6' LIMIT 1
+  Rendered layouts/_header.html.erb (16.0ms)
+Completed 200 OK in 148ms (Views: 140.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-22 08:53:19 -0400
+
+
+Started GET "/assets/carousel.css?body=1" for 127.0.0.1 at 2014-10-22 08:53:19 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-22 08:53:19 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-22 08:53:19 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-10-22 08:53:19 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-22 08:53:19 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-22 08:53:19 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 08:53:19 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-22 08:53:19 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 08:53:19 -0400
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-22 08:56:05 -0400
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'db87593d10c5e6b52bd7b028c890ec2c222d78d6' LIMIT 1[0m
+  Rendered shared/_event_form.html.erb (15.0ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m
+  Rendered events/_event.html.erb (1.9ms)
+  Rendered events/index.html.erb within layouts/application (21.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 98ms (Views: 92.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:05 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:05 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:06 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:06 -0400
+
+
+Started GET "/assets/carousel.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:06 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:06 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:06 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:06 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:06 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:06 -0400
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-22 08:56:06 -0400
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'db87593d10c5e6b52bd7b028c890ec2c222d78d6' LIMIT 1
+  Rendered shared/_event_form.html.erb (4.2ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at DESC LIMIT 30 OFFSET 0
+  Rendered events/_event.html.erb (1.2ms)
+  Rendered events/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 67ms (Views: 64.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/carousel.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:07 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:07 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:07 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:07 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:07 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:07 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:07 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:07 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:07 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:07 -0400
+
+
+Started GET "/events/2" for 127.0.0.1 at 2014-10-22 08:56:07 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ?  ORDER BY created_at DESC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "eu_rels" ON "users"."id" = "eu_rels"."attender_id" WHERE "eu_rels"."attended_id" = ?  [["attended_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "eu_rels" ON "users"."id" = "eu_rels"."attender_id" WHERE "eu_rels"."attended_id" = ?[0m  [["attended_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "eu_rels" ON "users"."id" = "eu_rels"."attender_id" WHERE "eu_rels"."attended_id" = ?  [["attended_id", 2]]
+  Rendered shared/_statse.html.erb (22.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'db87593d10c5e6b52bd7b028c890ec2c222d78d6' LIMIT 1[0m
+  [1m[35mEuRel Load (0.1ms)[0m  SELECT  "eu_rels".* FROM "eu_rels"  WHERE "eu_rels"."attender_id" = ? AND "eu_rels"."attended_id" = 2 LIMIT 1  [["attender_id", 4]]
+  Rendered events/_attend.html.erb (5.9ms)
+  Rendered events/_attend_form.html.erb (6.9ms)
+  Rendered events/show.html.erb within layouts/application (32.9ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 90ms (Views: 86.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2014-10-22 08:56:08 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ?  ORDER BY created_at DESC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "eu_rels" ON "users"."id" = "eu_rels"."attender_id" WHERE "eu_rels"."attended_id" = ?  [["attended_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "eu_rels" ON "users"."id" = "eu_rels"."attender_id" WHERE "eu_rels"."attended_id" = ?[0m  [["attended_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "eu_rels" ON "users"."id" = "eu_rels"."attender_id" WHERE "eu_rels"."attended_id" = ?  [["attended_id", 2]]
+  Rendered shared/_statse.html.erb (4.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'db87593d10c5e6b52bd7b028c890ec2c222d78d6' LIMIT 1[0m
+  [1m[35mEuRel Load (0.1ms)[0m  SELECT  "eu_rels".* FROM "eu_rels"  WHERE "eu_rels"."attender_id" = ? AND "eu_rels"."attended_id" = 2 LIMIT 1  [["attender_id", 4]]
+  Rendered events/_attend.html.erb (2.3ms)
+  Rendered events/_attend_form.html.erb (3.2ms)
+  Rendered events/show.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 64ms (Views: 61.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/carousel.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:08 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:08 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:08 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:08 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:08 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:08 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:08 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:08 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:08 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:08 -0400
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-22 08:56:10 -0400
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'db87593d10c5e6b52bd7b028c890ec2c222d78d6' LIMIT 1[0m
+  Rendered shared/_event_form.html.erb (5.1ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m
+  Rendered events/_event.html.erb (3.6ms)
+  Rendered events/index.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 63ms (Views: 60.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-22 08:56:10 -0400
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'db87593d10c5e6b52bd7b028c890ec2c222d78d6' LIMIT 1
+  Rendered shared/_event_form.html.erb (3.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at DESC LIMIT 30 OFFSET 0
+  Rendered events/_event.html.erb (1.1ms)
+  Rendered events/index.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 67ms (Views: 65.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/carousel.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:10 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:10 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:10 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:10 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:10 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:10 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:10 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:10 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:10 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:10 -0400
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-22 08:56:31 -0400
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'db87593d10c5e6b52bd7b028c890ec2c222d78d6' LIMIT 1[0m
+  Rendered shared/_event_form.html.erb (2.0ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m
+  Rendered events/_event.html.erb (1.9ms)
+  Rendered events/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 65ms (Views: 62.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/carousel.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:31 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:31 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:32 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:32 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:32 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:32 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:32 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:32 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:32 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:32 -0400
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-22 08:56:46 -0400
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'db87593d10c5e6b52bd7b028c890ec2c222d78d6' LIMIT 1
+  Rendered shared/_event_form.html.erb (8.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at DESC LIMIT 30 OFFSET 0
+  Rendered events/_event.html.erb (2.0ms)
+  Rendered events/index.html.erb within layouts/application (16.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 71ms (Views: 65.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/carousel.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:46 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:46 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:46 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-22 08:56:46 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:46 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:46 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:46 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:46 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:46 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 08:56:46 -0400

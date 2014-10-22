@@ -1,5 +1,5 @@
 <div class="container">
-
+<% if current_user.moderator? %>
 <%= form_for(@event) do |f| %>
 
       <%= f.label :title %>
@@ -14,6 +14,8 @@
      
 
       <%= f.submit "Create Event", class: "btn btn-large btn-primary" %>
+    <% end %>
+    <% else %>
     <% end %>
 </div>
 
