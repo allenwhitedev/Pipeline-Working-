@@ -5,12 +5,11 @@
 	<br>
 		<%= form_for(current_user.eu_rels.build(attended_id: @event.id)) do |f| %>
 	  	<div><%= f.hidden_field :attended_id %></div>
+	  	<%= text_field_tag :code_attempt %>
 	  	<%= f.submit "Checkin to this Event", class: "btn-xlarge", id: "#enlarge-btn" %>
 	  <% end %>
 	<% else %>
-		<h1>You are checked in to this event.</h1>
 	<% end %>
 
 <% else %>
-	<h1>The event is currently locked.</h1>
 <% end %>

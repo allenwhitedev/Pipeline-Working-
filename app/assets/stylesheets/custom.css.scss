@@ -208,3 +208,12 @@ aside {
        -moz-border-radius: 8px;
             border-radius: 8px;
 }
+
+/* Maybe have all red/green text stylings in two classes/ids and then comment them */
+.locked-event {
+	color: red;
+}
+
+.unlocked-event {
+	color: green;
+}

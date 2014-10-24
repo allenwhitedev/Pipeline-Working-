@@ -1,16 +1,16 @@
-
 <% if !@event.checkincode.nil? %>
 
 <div href="<%= attenders_event_path(@event) %>">
     <div id="attenders" class="stat">
-      <%= pluralize(@event.attenders.count, "person") %>
+     <span id="checkedin-count"><style>#checkedin-count {font-size: 1.5em;}</style>
+     <%= @event.attenders.count %></span> <%= pluralize(@event.attenders.count, "person").split(" ", 2)[1] %>
     <%= pluralize(@event.attenders.count, 'has', 'have').split(" ", 2)[1] %> checked in to this event.
-  	</div>
+    </div>
   </div>
   <% if @event.attenders.count > 0 %>
-		<style>#attenders {color: green; margin-bottom: 12px;}</style>
+    <style>#attenders {margin-bottom: 12px;}</style>
   <% else %>
-  	<style>#attenders {color: red; margin-bottom: 12px;}</style>
+    <style>#attenders {color: red; margin-bottom: 12px;}</style>
   <% end %>
   <% else %>
 
