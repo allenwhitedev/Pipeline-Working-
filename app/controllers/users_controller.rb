@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :signed_in_user, only: [:edit, :update, :index, :destroy, :attending]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: [:destroy]
+  before_action :get_user, only: [:reset_password]
 
 	def create
 		@user = User.new(user_params)
@@ -63,7 +64,11 @@ class UsersController < ApplicationController
   		flash.now[:danger] = "Email address not found"
       render 'forgot_password'
   	end
+  end
 
+  def reset_password
+  	flash.now[:success] = "You got here!"
+  	render 'forgot_password'
   end
 
 
@@ -75,6 +80,10 @@ end
 
 	def user_params
 		params.require(:user).permit(:name, :email, :password, :password_confirmation)
+	end
+
+	def pr_params
+		params.require(:user).permit(:password, :password_confirmation)
 	end
 
 	def correct_user

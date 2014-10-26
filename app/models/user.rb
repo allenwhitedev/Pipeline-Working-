@@ -2,7 +2,10 @@ class User < ActiveRecord::Base
 	has_many :events, dependent: :destroy
 	has_many :eu_rels, class_name: "EuRel", foreign_key: "attender_id", dependent: :destroy
 	has_many :attended_events, through: :eu_rels, source: :attended 
+
 	before_save { self.email = email.downcase }
+	before_create :create_remember_token
+	
 	validates :name, length: { in: 2..50 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, uniqueness: true, length: { in: 2..50 }, format: { with: VALID_EMAIL_REGEX }
@@ -39,11 +42,23 @@ class User < ActiveRecord::Base
     eu_rels.find_by(attended_id: fun_event)
   end
 
+  # Returns true if a password reset has expired.
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
+
 private
 	
 	def create_remember_token
 		self.remember_token = User.digest(User.new_remember_token)
 	end
+
+	def get_user
+    @user = User.find_by(email: params[:email])
+    unless @user && @user.authenticated?(:reset, params[:id])
+      redirect_to root_url
+    end
+  end
 
 end
 

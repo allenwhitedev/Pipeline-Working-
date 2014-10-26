@@ -7,6 +7,13 @@ module SessionsHelper
 		self.current_user = user
 	end
 
+	# Here because of parallel structure to remember_token and because sessionshelper is included in application, but this 
+	# may very well be moved to users helper(and probably wouldn't need to be included in the application controller)
+	def tbn
+		#user.update_attribute(:password_digest), User.digest(remember_token))
+	end
+	
+
 	def signed_in?
 		!current_user.nil?
 	end
