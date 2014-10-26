@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   match 'reset_password', to: 'users#reset_password', via: 'get'
 
+  match 'reset_password_submit', to: 'users#reset_password_submit', via: 'get'
+
   #match '/events', to: 'pages#events', via: 'get'
 
   resources :users do

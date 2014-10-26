@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@Pipeline.com"
+  default from: "from@pipeline.com"
 
   def account_active
 

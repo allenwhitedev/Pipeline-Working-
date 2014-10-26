@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token
+	attr_accessor :reset_token
 	
 	validates :name, length: { in: 2..50 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -47,18 +48,23 @@ class User < ActiveRecord::Base
     reset_sent_at < 2.hours.ago
   end
 
+  def create_reset_digest
+  	self.reset_token = User.digest(User.new_remember_token)
+  	update_attribute(:reset_digest, reset_token)#self.reset_token?
+    update_attribute(:reset_sent_at, Time.zone.now)
+  end
+
+  # Returns true if a password reset has expired.
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
+
 private
 	
 	def create_remember_token
 		self.remember_token = User.digest(User.new_remember_token)
 	end
 
-	def get_user
-    @user = User.find_by(email: params[:email])
-    unless @user && @user.authenticated?(:reset, params[:id])
-      redirect_to root_url
-    end
-  end
 
 end
 

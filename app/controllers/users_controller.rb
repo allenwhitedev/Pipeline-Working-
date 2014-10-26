@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :signed_in_user, only: [:edit, :update, :index, :destroy, :attending]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: [:destroy]
-  before_action :get_user, only: [:reset_password]
+  before_action :get_user, only: [:reset_password, :reset_password_submit]
 
 	def create
 		@user = User.new(user_params)
@@ -55,10 +55,11 @@ class UsersController < ApplicationController
   end
 
   def password_reset
-  	@user = User.find_by(email: params[:user][:email].downcase)
+  	@user = User.find_by(email: params[:password_reset][:email].downcase)
   	if @user
+  		@user.create_reset_digest
   		UserMailer.reset_password(@user).deliver
-  		flash.now[:success] = "That email exists!"
+  		flash.now[:success] = "That email exists! Email sent! (untested)"
   		render 'forgot_password'
   	else
   		flash.now[:danger] = "Email address not found"
@@ -67,8 +68,26 @@ class UsersController < ApplicationController
   end
 
   def reset_password
-  	flash.now[:success] = "You got here!"
-  	render 'forgot_password'
+  
+  end
+
+  def reset_password_submit
+  		if @user.password_reset_expired?
+      flash[:danger] = "Password reset has expired."
+      redirect_to root_url 
+    elsif @user.update_attributes(pr_params)
+      if (params[:user][:password].blank? &&
+          params[:user][:password_confirmation].blank?)
+        flash.now[:danger] = "Password/confirmation can't be blank"
+        render 'reset_password'
+      else
+        flash[:success] = "Password has been reset."
+        sign_in @user
+        redirect_to @user
+      end
+    else
+      render 'reset_password'
+    end
   end
 
 
@@ -90,5 +109,13 @@ end
 		@user = User.find(params[:id])
 		redirect_to root_url unless current_user?(@user)
 	end
+
+		def get_user
+    @user = User.find_by(email: params[:email])
+    unless !@user.email.nil? 
+    	flash[:danger] = @user.name
+      redirect_to root_url
+    end
+  end
 
 end

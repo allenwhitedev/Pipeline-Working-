@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141020224418) do
+ActiveRecord::Schema.define(version: 20141026053936) do
 
   create_table "eu_rels", force: true do |t|
     t.integer  "attender_id"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20141020224418) do
     t.string   "organization"
     t.integer  "total_points",    default: 0
     t.string   "code"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   add_index "users", ["code"], name: "index_users_on_code"
