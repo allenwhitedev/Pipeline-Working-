@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   def password_reset
   	@user = User.find_by(email: params[:user][:email].downcase)
   	if @user
-  		Usermailer.reset_password(@user).deliver
+  		UserMailer.reset_password(@user).deliver
   		flash.now[:success] = "That email exists!"
   		render 'forgot_password'
   	else
