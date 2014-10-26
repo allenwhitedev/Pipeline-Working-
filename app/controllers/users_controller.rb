@@ -53,6 +53,19 @@ class UsersController < ApplicationController
     render 'show_attend'
   end
 
+  def password_reset
+  	@user = User.find_by(email: params[:user][:email].downcase)
+  	if @user
+  		Usermailer.reset_password(@user).deliver
+  		flash.now[:success] = "That email exists!"
+  		render 'forgot_password'
+  	else
+  		flash.now[:danger] = "Email address not found"
+      render 'forgot_password'
+  	end
+
+  end
+
 
 private
 

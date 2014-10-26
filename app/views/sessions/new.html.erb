@@ -9,6 +9,7 @@
 	<%= f.text_field :email %>
 
 	<%= f.label :password %>
+	<%= link_to "(forgot password)", forgot_password_path %>
 	<%= f.password_field :password %>
 
 	<%= f.submit "Sign In", class: "btn btn-large btn-primary" %>

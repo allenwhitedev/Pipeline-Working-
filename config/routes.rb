@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   match '/help', to: 'pages#help', via: 'get'
 
+  match 'password_reset', to: 'users#password_reset', via: 'get'
+
+  match 'forgot_password', to: 'users#forgot_password', via: 'get'
+
   #match '/events', to: 'pages#events', via: 'get'
 
   resources :users do
