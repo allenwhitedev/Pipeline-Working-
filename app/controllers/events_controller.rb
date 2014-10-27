@@ -58,9 +58,7 @@ class EventsController < ApplicationController
 private
 	
 	def event_params
-		params.require(:event).permit(:title, :comment, :points, :event_time,)
-		# NEED TO CONTROL WHAT ATTRIBUTES CAN BE SET TO PREVENT MASS ASSIGNEMNT
-	# WRITE A FUNCTIONING REQUIRE AND PERMIT LINE HERE LATER TO ONLY ALLOW CERTAIN ATTRIBUTES TO BE SET
+		params.require(:event).permit(:title, :comment, :points, :start_time, :end_time)
 	end
 
 	def correct_user

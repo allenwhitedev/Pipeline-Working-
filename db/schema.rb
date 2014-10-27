@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026053936) do
+ActiveRecord::Schema.define(version: 20141027204818) do
 
   create_table "eu_rels", force: true do |t|
     t.integer  "attender_id"
@@ -35,8 +35,12 @@ ActiveRecord::Schema.define(version: 20141026053936) do
     t.datetime "event_time"
     t.string   "organization"
     t.integer  "points"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
+  add_index "events", ["end_time"], name: "index_events_on_end_time"
+  add_index "events", ["start_time"], name: "index_events_on_start_time"
   add_index "events", ["user_id", "created_at"], name: "index_events_on_user_id_and_created_at"
 
   create_table "users", force: true do |t|

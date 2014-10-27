@@ -7,8 +7,9 @@
   <!-- <span class="event_time">Happening at: <%= event.event_time %></span> 
   <br> Datetime is tricky but will be added once it can be created in correct format -->
   <span class="timestamp">
-    Created <%= time_ago_in_words(event.created_at) %> ago.
-   
+    Created <%= time_ago_in_words(event.created_at) %> ago.<br>
+    At: <%= event.start_time %><br>
+    Ends: <%= event.end_time %><br>
   </span>
   
     <% if current_user.moderator? %>
