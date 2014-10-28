@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   match '/pipeline', to: 'pages#pipeline', via: 'get'
 
+  match '/calendar', to: 'pages#calendar', via: 'get'
+
   match '/help', to: 'pages#help', via: 'get'
 
   match '/signup', to: 'users#new', via: 'get'
