@@ -10,8 +10,6 @@ class UserMailer < ActionMailer::Base
 
 
   	mail to: user.email, subject: "Password Reset"
-  	#flash.now[:success] = "An email with the password reset link was sent"
-  	#redirect_to @user #This redirect should then send user to login page(untested)
   end
 
 

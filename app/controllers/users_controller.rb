@@ -54,12 +54,12 @@ class UsersController < ApplicationController
     render 'show_attend'
   end
 
-  def password_reset
-  	@user = User.find_by(email: params[:password_reset][:email].downcase)
+  def password_reset_request
+  	@user = User.find_by(email: params[:password_reset_request][:email].downcase)
   	if @user
   		@user.create_reset_digest
   		UserMailer.reset_password(@user).deliver
-  		flash.now[:success] = "That email exists! Email sent! (untested)"
+  		flash.now[:info] = "Password reset sent. Check your email now."
   		render 'forgot_password'
   	else
   		flash.now[:danger] = "Email address not found"
@@ -68,7 +68,6 @@ class UsersController < ApplicationController
   end
 
   def reset_password
-  
   end
 
   def reset_password_submit
@@ -78,7 +77,7 @@ class UsersController < ApplicationController
     elsif @user.update_attributes(pr_params)
       if (params[:user][:password].blank? &&
           params[:user][:password_confirmation].blank?)
-        flash.now[:danger] = "Password/confirmation can't be blank"
+        flash.now[:danger] = "Password/confirmation can't be blank" #don't think this ever gets executed
         render 'reset_password'
       else
         flash[:success] = "Password has been reset."

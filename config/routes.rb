@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   match '/help', to: 'pages#help', via: 'get'
 
-  match '/signup', to: 'users#new', via: 'get'
+  match '/signup', to: 'users#new', via: 'get' 
 
   match '/signin', to: 'sessions#new', via: 'get'
 
@@ -16,13 +16,13 @@ Rails.application.routes.draw do
 
   match '/help', to: 'pages#help', via: 'get'
 
-  match 'password_reset', to: 'users#password_reset', via: 'get'
+  match 'password_reset_request', to: 'users#password_reset_request', via: 'patch' #rename this with request
 
   match 'forgot_password', to: 'users#forgot_password', via: 'get'
 
-  match 'reset_password', to: 'users#reset_password', via: 'get'
+  match 'reset_password', to: 'users#reset_password', via: 'get' # this get is fine, it's the link provided in emails
 
-  match 'reset_password_submit', to: 'users#reset_password_submit', via: 'get'
+  match 'reset_password_submit', to: 'users#reset_password_submit', via: 'patch'
 
   #match '/events', to: 'pages#events', via: 'get'
 
