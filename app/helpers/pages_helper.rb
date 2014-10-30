@@ -76,8 +76,15 @@ module PagesHelper
 			cal += "<td>#{day+counter_offset}</td>"	
 		end
 		
-		(35 - blank_counter - month_days).times do |day|
-			cal += "<td>&nbsp;</td>"	
+		if blank_counter > 0 || month_days != 28
+			(35 - blank_counter - month_days).times do |day|
+				cal += "<td>&nbsp;</td>"	
+			end
+		end
+		if blank_counter + month_days > 35
+			(42 - blank_counter - month_days).times do |day|
+				cal += "<td>&nbsp;</td>"
+			end			
 		end
 		cal += "</tr>"
 		cal += "</table>"
