@@ -5,6 +5,10 @@
 	      <h1>
 	        <%= gravatar_for @user %>
 	        <%= @user.name %>
+	        <% if !current_user.nil? && current_user.moderator? %>
+	         (<%= @user.email %>) 	
+	         <% else %>
+	         <% end %>
 	        <%= render 'shared/stats' %>
 	        <br>
 	        	Points: <%= @user.total_points %>

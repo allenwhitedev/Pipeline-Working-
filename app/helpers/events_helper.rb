@@ -1,4 +1,13 @@
 module EventsHelper
+  require 'date'
+
+ 
+
+    #see if you can make this private
+  def generate_checkincode
+      sai_words = %w(sisters chapter formal music business sigma alpha iota)
+      sai_words[rand(sai_words.length)]+(rand(89)+10).to_s()
+  end
 
   def wrap(comment)
     sanitize(raw(comment.split.map{ |s| wrap_long_string(s) }.join(' ')))

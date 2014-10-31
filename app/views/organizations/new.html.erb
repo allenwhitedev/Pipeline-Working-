@@ -1,11 +1,19 @@
 <% provide(:title, 'Organization') %>
-<h1>Sign up Your Organization</h1><style>h1 {text-align: center;}</style>
+<h1>Sign up Your Organization</h1>
+<style>
+h1 {text-align: center; margin-bottom: 40px;}
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+</style>
 
 <div class="row">
   <div class="form-area">
     <%= form_for(@organization) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :name %>
+      <%= f.label "Organization Name" %>
       <%= f.text_field :name %>
 
       <%= f.label :description %>

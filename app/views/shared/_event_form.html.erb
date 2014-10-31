@@ -1,4 +1,5 @@
 <div class="container">
+<div class='event_form'>
 <% if current_user.moderator? %>
 <%= form_for(@event) do |f| %>
 
@@ -20,6 +21,7 @@
     <% end %>
     <% else %>
     <% end %>
+</div>
 </div>
 
 <!-- Organization, etc.(not urgent) still to be added in this form when creating an event -->

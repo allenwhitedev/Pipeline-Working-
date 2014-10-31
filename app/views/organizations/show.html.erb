@@ -1,7 +1,10 @@
 <div class="container">
+<div class='well'>
 <h1><%= @organization.name %></h1>
-<h2><%= @organization.description %></h2>
-<h2><%= pluralize(@organization.joiners.count, 'member') %></h2>
+<div class='well'>
+<h4><%= @organization.description %></h4>
+</div>
+<h2><%= link_to pluralize(@organization.joiners.count, 'member'), users_path %></h2>
 <% if current_user.nil? %>
 	<h3><%= link_to "Login/Signup First to Join #{@organization.name}",	 signin_path %></h3>
 	<!-- Future(had troubles implementing) -after the user logs in they are redirected to this page or even better, have already joined the organization -->
@@ -12,4 +15,5 @@
   	<%= f.submit "Join This Organization", class: "btn btn-large btn-primary" %>
 	<% end %>
 <% end %>
+</div>
 </div>

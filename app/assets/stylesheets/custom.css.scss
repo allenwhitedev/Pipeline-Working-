@@ -121,6 +121,12 @@ aside {
 	margin: 0 auto;
 }
 
+@media screen and (max-width: 620px) {
+  .center-wrapper {
+    width: 70%;
+  }
+}
+
 .listed_user {
 	list-style: none;
 	font-size: 1.75em;

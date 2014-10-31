@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+	include EventsHelper
 	before_action :signed_in_user, only: [:create, :destroy]
 	before_action :correct_user,   only: :destroy
 	# before_action :signed_in_mod, only: [:create, :destroy]
@@ -42,16 +43,11 @@ class EventsController < ApplicationController
   def correct_code
   	true
   end
-
-  #see if you can make this private
-  def generate_checkincode
-  	 
-  end
-
+  
   #updates event with a checkincode, thus unlocking it
   def update
   	@event = Event.find(params[:id])
-  	@event.update_attribute(:checkincode, SecureRandom.urlsafe_base64)
+  	@event.update_attribute(:checkincode, generate_checkincode)
   	redirect_to event_url
   end
 

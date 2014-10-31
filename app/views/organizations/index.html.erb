@@ -2,7 +2,8 @@
 <% provide(:title, "Organizations") %>
 <div class="container">
 
-<h1>Pipeline Organizations</h1><style>h1 {text-align: center;}</style>
+<h1>Pipeline Organizations</h1><style>h1, h2 {text-align: center;} </style>
+<h2><%= link_to "Add An Organization", organizations_signup_path, class: "btn btn-large btn-primary" %></h2>
 <%= will_paginate %>
 
 <ul class="events">
