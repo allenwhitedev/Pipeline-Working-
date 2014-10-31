@@ -24,11 +24,13 @@ Rails.application.routes.draw do
 
   match 'reset_password_submit', to: 'users#reset_password_submit', via: 'patch'
 
+  match 'organizations/signup', to: 'organizations#new', via: 'get'
+
   #match '/events', to: 'pages#events', via: 'get'
 
   resources :users do
     member do
-      get :attending
+      get :attending, :joining
     end
   end
 
@@ -36,12 +38,21 @@ Rails.application.routes.draw do
 
   resources :eu_rels, only: [:create, :destroy]
 
+  resources :ou_rels, only: [:create, :destroy]
+
+  resources :oe_rels, only: [:create, :destroy]
+
   resources :events  do
     member do
-      get :attenders
+      get :attenders, :attending
     end
   end
   
+  resources :organizations  do
+    member do
+      get :joiners, :attenders
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

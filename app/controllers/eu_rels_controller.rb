@@ -4,12 +4,12 @@ class EuRelsController < ApplicationController
   def create
     @event = Event.find(params[:eu_rel][:attended_id])
     if codes_match?
-    current_user.attend!(@event)
-    flash[:success] = "You are now checked in to this event"
-    redirect_to @event
+      current_user.attend!(@event)
+      flash[:success] = "You are now checked in to this event"
+      redirect_to @event
     else
-    flash[:danger] = "The checkin code does not match"
-    redirect_to @event
+      flash[:danger] = "The checkin code does not match"
+      redirect_to @event
     end
   end
 

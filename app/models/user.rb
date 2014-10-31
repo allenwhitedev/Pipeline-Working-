@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :events, dependent: :destroy
 	has_many :eu_rels, class_name: "EuRel", foreign_key: "attender_id", dependent: :destroy
+	has_many :ou_rels, class_name: "OuRel", foreign_key: "joiner_id", dependent: :destroy
 	has_many :attended_events, through: :eu_rels, source: :attended 
 
 	before_save { self.email = email.downcase }
@@ -33,7 +34,7 @@ class User < ActiveRecord::Base
     self.update_attribute(:total_points, @pluspoints)
   end
 
-  # Unattend an event
+  # Unattends an event
   def unattend!(fun_event)
     eu_rels.find_by(attended_id: fun_event.id).destroy
   end
@@ -42,6 +43,22 @@ class User < ActiveRecord::Base
   def attending?(fun_event)
     eu_rels.find_by(attended_id: fun_event)
   end
+
+  # Joins an organization
+  def join!(fun_orga)
+    ou_rels.create!(joined_id: fun_orga.id)
+  end
+
+  # Leaves an organization
+  def unjoin!(fun_orga)
+    ou_rels.find_by(joined_id: fun_orga.id).destroy
+  end
+
+  # True if user is a member of the organization
+  def joined?(fun_orga)
+    ou_rels.find_by(joined_id: fun_orga)
+  end
+
 
   # Returns true if a password reset has expired.
   def password_reset_expired?

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027204818) do
+ActiveRecord::Schema.define(version: 20141030221318) do
 
   create_table "eu_rels", force: true do |t|
     t.integer  "attender_id"
@@ -42,6 +42,39 @@ ActiveRecord::Schema.define(version: 20141027204818) do
   add_index "events", ["end_time"], name: "index_events_on_end_time"
   add_index "events", ["start_time"], name: "index_events_on_start_time"
   add_index "events", ["user_id", "created_at"], name: "index_events_on_user_id_and_created_at"
+
+  create_table "oe_rels", force: true do |t|
+    t.integer  "attender_id"
+    t.integer  "attended_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "oe_rels", ["attended_id"], name: "index_oe_rels_on_attended_id"
+  add_index "oe_rels", ["attender_id", "attended_id"], name: "index_oe_rels_on_attender_id_and_attended_id", unique: true
+  add_index "oe_rels", ["attender_id"], name: "index_oe_rels_on_attender_id"
+
+  create_table "organizations", force: true do |t|
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  add_index "organizations", ["name"], name: "index_organizations_on_name"
+  add_index "organizations", ["user_id", "created_at"], name: "index_organizations_on_user_id_and_created_at"
+
+  create_table "ou_rels", force: true do |t|
+    t.integer  "joiner_id"
+    t.integer  "joined_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ou_rels", ["joined_id"], name: "index_ou_rels_on_joined_id"
+  add_index "ou_rels", ["joiner_id", "joined_id"], name: "index_ou_rels_on_joiner_id_and_joined_id", unique: true
+  add_index "ou_rels", ["joiner_id"], name: "index_ou_rels_on_joiner_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
