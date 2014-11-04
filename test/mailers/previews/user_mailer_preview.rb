@@ -9,4 +9,10 @@ class UserMailerPreview < ActionMailer::Preview
 		user.reset_token = User.new_remember_token
 		UserMailer.reset_password(user)
 	end	
+
+	def event_attendance
+		# user = find organization and then search for users in that organization until you hit group leader 
+		# then assign that to be the user here
+		# event = find event
+	end
 end
