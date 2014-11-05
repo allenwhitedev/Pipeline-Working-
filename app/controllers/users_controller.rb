@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   end
 
    def attending
-    @title = "Attending"
+    @title = "Attending" # get rid of this and go through show_attend view for users
     @user = User.find(params[:id])
     @events = @user.attended_events.paginate(page: params[:page])
     render 'show_attend'

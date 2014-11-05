@@ -15,7 +15,13 @@ class EventsController < ApplicationController
 	def create
 		@event = Event.new(event_params)
 		if @event.save
-			flash[:success] = "Event Created"
+			flash[:success] = "Event Created: #{@event.id}"
+			if current_user.ou_rels.count == 1
+				organization = current_user.ou_rels.find_by(joiner_id: current_user.id)
+				@event.orga_own(organization)
+				flash[:info] = "#{organization.joined_id}"	
+			else	
+			end 
 			redirect_to events_url
 		else
 			@feed_items = []
@@ -49,6 +55,8 @@ class EventsController < ApplicationController
   	@event.update_attribute(:checkincode, generate_checkincode)
   	redirect_to event_url
   end
+
+
 
 private
 	

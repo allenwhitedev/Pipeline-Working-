@@ -11,6 +11,11 @@ class Event < ActiveRecord::Base
 	validates :comment, length: { maximum: 140 }
 
 
+  # Makes event belong to an organization if an organization is provided
+  def orga_own(fun_orga)
+    oe_rels.create!(attended_id: fun_orga.id, attender_id: self.id)
+  end
+
 	# Makes an event belong to an organization(a specific organization, events can belong to multiple organizations)
   def attend!(fun_orga)
     oe_rels.create!(attended_id: fun_orga.id)
