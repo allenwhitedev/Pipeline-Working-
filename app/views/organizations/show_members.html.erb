@@ -10,7 +10,7 @@
       </section>
     </aside>
     <div class="span8">
-      <h3><%= @event.title %> Attendance</h3>
+      <h3><%= @organization.name %> Members</h3>
       <% if @users.any? %>
         <ul class="users">
           <%= render @users %>
@@ -20,14 +20,16 @@
     </div>
 </div>
 
+
 <% else %>
-<% provide(:title, @event.title) %>
+<!-- Will sort this out once checkin button works -->
+<% provide(:title, @organization.name) %>
 <div class="container">
       <section>
         <%= render 'shared/stats' %>         
       </section>
     <div class="panel panel-default">
-    <div class="panel-heading"><h3><%= @event.title %> Attendance</h3><style>h3 {text-align: center;}</style></div>
+    <div class="panel-heading"><h3><%= @organization.name %> Members</h3><style>h3 {text-align: center;}</style></div>
     <table class="table">
     <thead>
     <tr>
@@ -44,4 +46,4 @@
     </table>
     </div>
   </div>
-<% end %>
+  <% end %>

@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 	include EventsHelper
-	before_action :signed_in_user, only: [:create, :destroy]
+	before_action :signed_in_user, only: [:create, :destroy, :show]
 	before_action :correct_user,   only: :destroy
 	# before_action :signed_in_mod, only: [:create, :destroy]
 

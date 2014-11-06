@@ -32,6 +32,18 @@ class OrganizationsController < ApplicationController
   	@organizations = Organization.paginate(page: params[:page])
   end
 
+  def joiners 
+    @organization = Organization.find(params[:id])
+    @users = @organization.joiners.paginate(page: params[:page])
+    render 'show_members'
+  end
+
+  def attenders
+    @organization = Organization.find(params[:id])
+    @events = @organization.attenders.paginate(page: params[:page])
+    render 'show_org_events'
+  end
+
 
 private
 	
