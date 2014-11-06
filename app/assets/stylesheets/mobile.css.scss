@@ -40,10 +40,41 @@
 	}
 
 /* header stylings */
+	
+	.mheader {
+		font-size: 1.2em;
+		height: 2.9em;
+		top: 50%;
+		width: 100%;
+		
+	}
+
+	.mnav {
+		color: #fff;
+		/* text-decoration: underline; */
+		position: relative;
+		top: 25%;
+		margin-left: 12.5%;	
+	}
+
+	#mnav2 {
+		margin-left: 14%;
+	}
+
+	#mnav3 {
+		margin-left: 5%;
+	}
+
 
 }
 
+
+
 @media screen and (min-width: 768px) {
+
+	.mheader {
+		display: none;
+	}
 
 	.mfooter {
 		display: none;
