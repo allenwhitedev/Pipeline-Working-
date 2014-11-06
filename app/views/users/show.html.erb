@@ -12,19 +12,13 @@
 	        <%= render 'shared/stats' %>
 	        <br>
 	        	Points: <%= @user.total_points %>
+	        <br>
+	        <%= link_to 'Event History', '/users/' + @user.id.to_s + '/attending' %>	
 	      </h1>
 	      <%= render 'layouts/calendar' %>
 	    </div>
 	  
-	  <div class="span8">
-	  
-	  	<% if @user.events.any? %>
-	  		<h3>Events Attended: <%= @user.events.count %></h3>
-	  			<ol class="events">
-	  				<%= render @events %>
-	  			</ol>
-	  			<%= will_paginate @events %>
-	  	<% end %>
+	  <div class="span8">  
 	  </div>
 	
 </div>

@@ -3,8 +3,12 @@
 <div href="<%= attenders_event_path(@event) %>">
     <div id="attenders" class="stat">
      <span id="checkedin-count"><style>#checkedin-count {font-size: 1.5em;}</style>
+     <% if !current_user.nil? && !current_user.moderator? %>
      <%= @event.attenders.count %></span> <%= pluralize(@event.attenders.count, "person").split(" ", 2)[1] %>
     <%= pluralize(@event.attenders.count, 'has', 'have').split(" ", 2)[1] %> checked in to this event.
+    <% else %>
+      <%= link_to pluralize(@event.attenders.count, 'person') + " " + pluralize(@event.attenders.count, 'has', 'have').split(" ", 2)[1] + " checked in to this event" , '/events/' + @event.id.to_s + '/attenders' %>
+    <% end %>
     </div>
   </div>
   <% if @event.attenders.count > 0 %>
