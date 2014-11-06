@@ -1,6 +1,6 @@
 <div class="container">
 <div class='event_form'>
-<% if current_user.moderator? %>
+<% if !current_user.nil? && current_user.moderator? %>
 <%= form_for(@event) do |f| %>
 
       <%= f.label :title %>

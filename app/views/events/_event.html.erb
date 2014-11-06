@@ -14,7 +14,7 @@
     Ends: <%= distance_of_time_in_words(Time.zone.now, event.end_time) %> later<br>
   </span>
   
-    <% if current_user.moderator? %>
+    <% if !current_user.nil? && current_user.moderator? %>
     <%= link_to "Unlock Event", event, method: :patch %>
     
     
