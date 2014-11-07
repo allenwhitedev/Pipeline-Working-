@@ -1,9 +1,6 @@
+<div class="dheader">
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="black-attempt">
-  <div class="mheader">
-      <%= link_to 'Home', users_path, class: 'mnav', id: "mnav1" %></a>
-      <%= link_to 'Events', events_path, class: 'mnav', id: "mnav2" %></a>
-      <%= link_to 'Organizations', organizations_path, class: 'mnav', id: "mnav3" %></a>
-  </div>
+ 
   <div class="container-fluid">
 
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -61,8 +58,26 @@
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</div>
+
 </nav>
+</div>
+  
+
+  <div class="mheader">
+    
+      <%#= link_to 'Home', users_path, class: 'mnav', id: "mnav1" %>
+      <%#= link_to 'Events', events_path, class: 'mnav', id: "mnav2" %>
+      <div class="mpager-word">
+      <div><%= link_to 'Organizations', organizations_path, class: 'mnav', id: "mnav3" %></div>
+      </div>
+        <div class='pager-circles'>
+          <div class="active pager-circle"></div>
+          <div class="active pager-circle"></div>
+          <div class="active pager-circle"></div>
+        </div>
+      
+
+  </div>
 
 
 
