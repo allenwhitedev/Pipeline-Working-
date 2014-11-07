@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			sign_in @user
+      current_user.join!(Organization.find(1)) #temp for demo, users should auto join their organization through separate 
+      # organization login/signup pages
 			flash[:success] = "Welcome to the Pipeline, you can now check in to events and join other organizations"
 			redirect_to @user
 		else
