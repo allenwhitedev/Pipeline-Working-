@@ -23,6 +23,7 @@ class OrganizationsController < ApplicationController
 
   def show
   	@organization = Organization.find(params[:id])
+    joiners
   	# Make sure only public events/members are shown on public pages
     #users = @organization.users.paginate(page: params[:page])
     #@events = @organization.events.paginate(page: params[:page])
@@ -35,7 +36,7 @@ class OrganizationsController < ApplicationController
   def joiners 
     @organization = Organization.find(params[:id])
     @users = @organization.joiners.paginate(page: params[:page])
-    render 'show_members'
+    #render 'show_members'
   end
 
   def attenders

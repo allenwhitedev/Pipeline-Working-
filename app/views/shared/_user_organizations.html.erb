@@ -1,0 +1,6 @@
+
+      <% if @organizations.any? %>
+        <%= render @organizations %>
+        <%= will_paginate @organizations %>
+      <% end %>
+   

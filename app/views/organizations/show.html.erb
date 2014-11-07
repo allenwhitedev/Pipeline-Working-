@@ -4,7 +4,7 @@
 <div class='well'>
 <h4><%= @organization.description %></h4>
 </div>
-<h2><%= link_to pluralize(@organization.joiners.count, 'member'), '/organizations/' + @organization.id.to_s + '/joiners' %></h2>
+<h2><%= pluralize(@organization.joiners.count, 'member') %></h2>
 
 <% if current_user.nil? %>
 	<h3><%= link_to "Login/Signup First to Join #{@organization.name}",	 signin_path %></h3>
@@ -17,4 +17,5 @@
 	<% end %>
 <% end %>
 </div>
+<%= render 'shared/members' %>
 </div>
