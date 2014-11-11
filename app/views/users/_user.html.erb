@@ -1,5 +1,5 @@
 <li class="listed_user">
-  <% if !current_user.nil? && !current_user.moderator? %>
+  <% if current_user.nil? || !current_user.moderator? %>
   <%= gravatar_for user, size: 52 %>
   <%= link_to user.name, user %>
   <% else %>

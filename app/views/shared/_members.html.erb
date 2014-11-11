@@ -1,6 +1,6 @@
 <% provide(:title, @organization.name) %>
 <style>h3 {text-align: center;}</style>
-<% if !current_user.nil? && !current_user.moderator? %>
+<% if current_user.nil? || !current_user.moderator? %>
 
 
   <div class="row">

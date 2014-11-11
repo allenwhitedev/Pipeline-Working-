@@ -17,7 +17,8 @@ class EventsController < ApplicationController
 		if @event.save
 			flash[:success] = "Event Created"
 			if current_user.ou_rels.count == 1
-				organization = current_user.ou_rels.find_by(joiner_id: current_user.id)
+				organization_rel = current_user.ou_rels.find_by(joiner_id: current_user.id)
+				organization = Organization.find(organization_rel.joined_id)
 				@event.orga_own(organization)	
 			else	
 			end 
