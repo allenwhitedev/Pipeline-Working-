@@ -7,9 +7,12 @@
 <h1> HSA Events</h1><style>h1 {text-align: center;}</style>
 <%= will_paginate %>
 
-<ul class="events">
-<%= render @events %>
-</ul>
+<% if !current_user.nil? %>
+	<ul class="events">
+		<%= show_events_for_user(current_user).html_safe %>
+	</ul>
 
-<%= will_paginate %>
+	<%= will_paginate %>
 </div>
+<% else %>
+<% end %>

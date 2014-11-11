@@ -1,6 +1,25 @@
 module EventsHelper
   require 'date'
 
+  def show_events_for_user(user)
+    events_list = ""
+    user.ou_rels.each do |ou_rel|
+      organization = Organization.find(ou_rel.joined_id)
+      events_list += show_events_for_org(organization)  
+    end  
+    events_list
+  end
+
+  def show_events_for_org(organization)
+    org_events = ""
+    organization.reverse_oe_rels.each do |reverse_oe_rel|
+      event = Event.find(reverse_oe_rel.attender_id)
+      org_events += "<h2>#{event.title}<h2><br>"
+    end
+    org_events
+  end
+
+
  
 
     #see if you can make this private
