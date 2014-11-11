@@ -14,7 +14,11 @@ module EventsHelper
     org_events = ""
     organization.reverse_oe_rels.each do |reverse_oe_rel|
       event = Event.find(reverse_oe_rel.attender_id)
-      org_events += "<h2>#{event.title}<h2><br>"
+      org_events += "<div class='bwell desk-marg'>
+      <div class='org-img'>#{link_to(image_tag('org_img_grav_placeholder.jpg', :alt => 'org-img'), 
+        organization_url(organization.id))}
+      </div>
+      <h2 class='event-title'>#{event.title}</h2>#{event.comment}</div>"
     end
     org_events
   end

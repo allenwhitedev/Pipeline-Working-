@@ -1,11 +1,52 @@
 @import "bootstrap-sprockets";
 @import 'bootstrap';
 
+/* extend classes */
+
+
+.center-inline-block {
+  width: 100%;
+  text-align: center;
+}
+
+.desk-marg {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+/* application-wide */
 
 body {
 	padding-top: 60px;
 	background-color: #DAD8DB;
   /* #eeecef */	
+}
+
+.ccontainer {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.bwell {
+  border: 1px #DAD8DB outset;
+  background-color: #fff;
+}
+
+
+.bwell-rel {
+  border: 1px #DAD8DB outset;
+  background-color: #fff;
+  padding: 0 .5em;
+  display: inline-block;
+
+}
+
+.org-img {
+  height: 50px;
+  width: 50px;
+  background-color: #eeecef;
+  margin: .5em; 
 }
 
 #black-attempt {
@@ -93,15 +134,10 @@ input {
 
 /* events-comments */
 
-.events {
-  list-style: none;
-  margin: 10px 0 0 0;
-
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
+.event-title {
+  
 }
+
 .comment {
   display: block;
 }

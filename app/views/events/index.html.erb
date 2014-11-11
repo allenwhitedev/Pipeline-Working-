@@ -1,16 +1,15 @@
 <!-- This title and h1 will change depending on organization -->
 <% provide(:title, "HSA Events") %>
-<div class="container">
+<div class="ccontainer">
 
 <%= render 'shared/event_form' %>
 
-<h1> HSA Events</h1><style>h1 {text-align: center;}</style>
 <%= will_paginate %>
 
 <% if !current_user.nil? %>
-	<ul class="events">
+	
 		<%= show_events_for_user(current_user).html_safe %>
-	</ul>
+	
 
 	<%= will_paginate %>
 </div>
