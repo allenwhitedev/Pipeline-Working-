@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
                                    dependent:   :destroy
   has_many :attenders, through: :reverse_eu_rels, source: :attender
   has_many :oe_rels, class_name: "OeRel", foreign_key: "attender_id", dependent: :destroy
-	default_scope -> { order('created_at DESC') } #replace with event_time
+	default_scope -> { order('start_time ASC') } #replace with event_time
 	#validates :user_id, presence: true
 	validates :title, length: { in: 2..50 }
 	validates :comment, length: { maximum: 1000 }
