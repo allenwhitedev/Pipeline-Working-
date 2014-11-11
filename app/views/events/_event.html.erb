@@ -5,8 +5,7 @@
   <span class="comment well"><%= event.comment %></span>
   <span class="points">Worth: <%= event.points %> pts.</span>
   <br>
-  <!-- <span class="event_time">Happening at: <%= event.event_time %></span> 
-  <br> Datetime is tricky but will be added once it can be created in correct format -->
+ 
   <span class="timestamp">
     <!--Created <%= time_ago_in_words(event.created_at) %> ago.<br>-->
     Starts: <%= time_tag event.start_time %> <%#= distance_of_time_in_words(Time.zone.now, event.start_time) %><br>

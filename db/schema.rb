@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030221318) do
+ActiveRecord::Schema.define(version: 20141111015911) do
 
   create_table "eu_rels", force: true do |t|
     t.integer  "attender_id"
@@ -27,13 +27,10 @@ ActiveRecord::Schema.define(version: 20141030221318) do
   create_table "events", force: true do |t|
     t.string   "checkincode"
     t.string   "comment"
-    t.boolean  "attendance"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
-    t.datetime "event_time"
-    t.string   "organization"
     t.integer  "points"
     t.datetime "start_time"
     t.datetime "end_time"
@@ -70,8 +67,14 @@ ActiveRecord::Schema.define(version: 20141030221318) do
     t.integer  "joined_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "gleader",     default: false
+    t.boolean  "second_rank", default: false
+    t.boolean  "third_rank",  default: false
+    t.boolean  "fourth_rank", default: false
+    t.boolean  "fifth_rank",  default: false
   end
 
+  add_index "ou_rels", ["gleader"], name: "index_ou_rels_on_gleader"
   add_index "ou_rels", ["joined_id"], name: "index_ou_rels_on_joined_id"
   add_index "ou_rels", ["joiner_id", "joined_id"], name: "index_ou_rels_on_joiner_id_and_joined_id", unique: true
   add_index "ou_rels", ["joiner_id"], name: "index_ou_rels_on_joiner_id"
@@ -85,14 +88,11 @@ ActiveRecord::Schema.define(version: 20141030221318) do
     t.string   "remember_token"
     t.boolean  "admin",           default: false
     t.boolean  "moderator",       default: false
-    t.string   "organization"
     t.integer  "total_points",    default: 0
-    t.string   "code"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
   end
 
-  add_index "users", ["code"], name: "index_users_on_code"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
