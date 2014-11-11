@@ -74,7 +74,7 @@ input {
 
 .field_with_errors {
   @extend .control-group;
-  @extend .error;
+  /* @extend .error; Don't think there is an .error class */
 }
 
 
