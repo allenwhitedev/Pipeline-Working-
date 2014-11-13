@@ -1,15 +1,10 @@
 <% provide(:title, @event.title) %>
 <% if !current_user.nil? && !current_user.moderator? %>
-<div class="container">
+<div class="ccontainer">
 
-  <div class="row">
-    <aside class="span4">
-      <section>
         <%= render 'shared/stats' %>
-          </div>
-      </section>
-    </aside>
-    <div class="span8">
+        
+    
       <h3><%= @event.title %> Attendance</h3>
       <% if @users.any? %>
         <ul class="users">
@@ -17,18 +12,18 @@
         </ul>
         <%= will_paginate @users %>
       <% end %>
-    </div>
+   
 </div>
 
 <% else %>
 <% provide(:title, @event.title) %>
-<div class="container">
+<div class="ccontainer">
       <section>
         <%= render 'shared/stats' %>         
       </section>
-    <div class="panel panel-default">
-    <div class="panel-heading"><h3><%= @event.title %> Attendance</h3><style>h3 {text-align: center;}</style></div>
-    <table class="table">
+    <div class="bpanel bpanel-default">
+    <div class="bpanel-heading"><h3><%= @event.title %> Attendance</h3><style>h3 {text-align: center;}</style></div>
+    <table class="btable">
     <thead>
     <tr>
       <th>Name</th>

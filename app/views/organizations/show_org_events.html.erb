@@ -1,15 +1,12 @@
 <!-- Will sort this out once checkin button works -->
 <% provide(:title, @organization.name) %>
-<div class="container">
+<div class="ccontainer">
 
-  <div class="row">
-    <aside class="span4">
+
       <section>
         <%= render 'shared/stats' %>
-          </div>
-      </section>
-    </aside>
-    <div class="span8">
+         
+ 
       <h1><%= @organization.name %> Events </h1><style>h1 {text-align: center;}</style>
       <% if @events.any? %>
         <ul class="users">
@@ -17,5 +14,5 @@
         </ul>
         <%= will_paginate @events %>
       <% end %>
-    </div>
+   
 </div>

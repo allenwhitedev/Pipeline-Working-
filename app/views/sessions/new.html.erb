@@ -1,8 +1,9 @@
 <% provide(:title, "Sign in") %>
 
-<div class="row">
+
   <div class="form-area">
-  <div class="orga-signin">HSA Login</div><style>.orga-signin {text-align: center; font-size: 2.5em; margin-top: 1em; }</style>
+  <div class="orga-signin">HSA Login</div>
+  <style>.orga-signin {text-align: center; font-size: 2.5em; margin-top: 1em; }</style>
 <%= form_for(:session, url: sessions_path) do |f|  %>
 	
 	<%= f.label :email %>
@@ -16,4 +17,3 @@
 <% end %>
 <p><%= link_to "Don't have a Pipeline account? Sign up Here", signup_path %></p>
  </div>
-</div>

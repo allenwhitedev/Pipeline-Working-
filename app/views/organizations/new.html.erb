@@ -9,7 +9,7 @@ h1 {text-align: center; margin-bottom: 40px;}
 }
 </style>
 
-<div class="row">
+
   <div class="form-area">
     <%= form_for(@organization) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
@@ -22,4 +22,3 @@ h1 {text-align: center; margin-bottom: 40px;}
       <%= f.submit "Signup organization", class: "btn btn-large btn-primary", id: "signup-btn" %>
     <% end %>
   </div>
-</div>

@@ -1,9 +1,8 @@
 <!-- Will sort this out once checkin button works -->
 <% provide(:title, @title) %>
-<div class="container">
-<div class="row">
-  <aside class="span4">
-    <section>
+<div class="ccontainer">
+
+  
       <%= gravatar_for @user %>
       <h1><%= @user.name %></h1>
       <span><%= link_to "view my profile", @user %></span>
@@ -12,11 +11,9 @@
     <section>
       <%= render 'shared/stats' %>
       
-        </div>
+        
       
-    </section>
-  </aside>
-  <div class="span8">
+   
     <h3>Attended Events</h3><style> h3 { text-align: center;}</style> 
     <% if @events.any? %>
       <ul class="users">
@@ -24,6 +21,5 @@
       </ul>
       <%= will_paginate @events %>
     <% end %>
-  </div>
 </div>
 </div>

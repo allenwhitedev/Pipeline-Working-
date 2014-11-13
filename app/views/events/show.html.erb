@@ -1,5 +1,5 @@
 <% provide(:title, @event.title) %>
-<div class="container">
+<div class="ccontainer">
 	
 	    <section>
 	      
@@ -16,8 +16,8 @@
 			      <% end %>
 		       <% end %>
 	      <h2>
-	      	<div class="well"><h4><%= @event.comment %><h4></div>  
-	        <div class="well well-lg">        
+	      	<div class="bwell"><h4><%= @event.comment %><h4></div>  
+	        <div class="bwell">        
 	        <%= render 'shared/statse' %>
 	        <% if !current_user.attending?(@event) %>
 	        	Value: 	       
