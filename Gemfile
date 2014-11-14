@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.3'
 
-gem 'bootstrap-sass'
 gem 'sprockets', '2.11.0'
-
 gem 'rails', '4.1.5'
 
 group :development do
@@ -27,7 +25,5 @@ group :production do
   gem 'unicorn', '4.8.3'
 end
 
-
 gem 'bcrypt-ruby', '3.1.2'
 gem 'will_paginate'
-gem 'bootstrap-will_paginate'
