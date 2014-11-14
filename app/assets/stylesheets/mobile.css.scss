@@ -1,101 +1,48 @@
-.navbar-toggle {
-	display: none;
-}
 
-@media screen and (max-width: 768px) {
-
-	.ccontainer {
-		width: 125%;
-	}
-
-/* footer stylings, definitely still working on it */
-	
-	.mfooter {
-		position: fixed;
-		left:0px;
-   	bottom:0px;
-   	height: 3.5rem;
-   	width:100%;
-		background-color: #eeecef;
-		border-top: .75px solid #777678;
-	}
-
-	.mglyph {
-		background-color: red;
-		position: absolute;
-		font-size: 1em;
-	}
-
-	.glyph-text {
-		font-size: .85em;
-		margin: 0 auto;		
-	}
-
-	.navbar-brand {
+.mfooter {
 		display: none;
 	}
 
-	.bs-glyphicons-list li {
-		float: left;
-		width: 25%;
-		list-style: none;
-		padding-top: .55em;
-		/* margin-right: 2em; */
-	}
+/* smartphones media query */
 
-/* header stylings */
-
-	.dheader {
-		display: none;
-	}
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
 	
+	body {
+		padding: 0;
+	}
+
+	.ccontainer { width: 100%; 	}
+
+	.dheader { display: none; }
+
 	.mheader {
-		font-size: 1.3em;
-		width: 100%;
-		height: 8%;
-		background-color: #7D3B56;
+		background-color: #A1497B;
 		position: fixed;
-		top: 0px;
-		text-align: center;
+		top: 0;
+		width: 100%;
+		font-family: 'Open Sans', sans-serif;	
+		height: 2.75em;
 	}
 
-	.mnav {
-		color: #fff;
-		text-decoration: none;
+		.mnav {
+		background-color: red;
+		display: block;
 	}
 
-	.mpager-word {
-		list-style: none;
-		margin: 0 auto;
-		position: relative;
-		top: 25%;		
-	}
-	
-	.pager-circles {
-		height: 10px;
-		width: 27px;
-		position: relative;
-		top: 35%;
-		left: 48%;
-	}
 
-	.pager-circle {
-		height: 4px;
-		width: 4px;
-		border-radius: 100%;
-		background-color: pink;
+	.mnav li a {
+		display: block;
 		float: left;
-		margin-right: 5px;
-
+		padding: 0 1.5em;
+		color: #fff;
 	}
 
-	.mfooter {
-		display: none;
-	}
+
 
 }
 
 
+/* desktop media query */
 
 @media screen and (min-width: 768px) {
 
@@ -103,9 +50,6 @@
 		display: none;
 	}
 
-	.mfooter {
-		display: none;
-	}
 
 
 }

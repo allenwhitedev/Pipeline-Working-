@@ -62,22 +62,16 @@
 </nav>
 </div>
   
+  <header class ="mheader">
+  <nav class='mnav block'>
+      <ul class="mnav block">
+        <li class="block"><%= link_to 'Home', users_path, class: "block", id: "mnav1" %></li>
+        <li class="block"><%= link_to 'Events', events_path, class: "block", id: "mnav2" %></li>
+        <li class="block"><%= link_to 'Groups', organizations_path, class: "block", id: "mnav3" %></li>
+      </ul>
 
-  <div class="mheader">
-    
-      <%#= link_to 'Home', users_path, class: 'mnav', id: "mnav1" %>
-      <%#= link_to 'Events', events_path, class: 'mnav', id: "mnav2" %>
-      <div class="mpager-word">
-      <div><%= link_to 'Organizations', organizations_path, class: 'mnav', id: "mnav3" %></div>
-      </div>
-        <div class='pager-circles'>
-          <div class="active pager-circle"></div>
-          <div class="active pager-circle"></div>
-          <div class="active pager-circle"></div>
-        </div>
-      
-
-  </div>
+  </nav>
+</header>
 
 
 
