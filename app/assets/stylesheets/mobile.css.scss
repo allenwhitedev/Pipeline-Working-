@@ -1,7 +1,5 @@
+.dheader { display: none; }
 
-.mfooter {
-		display: none;
-	}
 
 /* smartphones media query */
 
@@ -16,25 +14,23 @@
 	.dheader { display: none; }
 
 	.mheader {
-		background-color: #A1497B;
-		position: fixed;
-		top: 0;
-		width: 100%;
-		font-family: 'Open Sans', sans-serif;	
-		height: 2.75em;
+		display: flex;
+	}	
+
+	.mfooter {
+		display: flex;
+				height: 2em;
+		flex-wrap: nowrap;
+		background-color: yellow;
+		justify-content: space-between;
+		list-style: none;
 	}
 
-		.mnav {
-		background-color: red;
-		display: block;
-	}
-
-
-	.mnav li a {
-		display: block;
-		float: left;
-		padding: 0 1.5em;
-		color: #fff;
+	.mnav {
+		flex: 1;
+		border: 1px solid red;
+		text-align: center;
+		line-height: 2em;
 	}
 
 
@@ -45,10 +41,11 @@
 /* desktop media query */
 
 @media screen and (min-width: 768px) {
-
+/*
 	.mheader {
 		display: none;
 	}
+*/
 
 
 
