@@ -6,12 +6,12 @@
   <span class="points">Worth: <%= event.points %> pts.</span>
   <br>
  
-  <span class="timestamp">
-    <!--Created <%= time_ago_in_words(event.created_at) %> ago.<br>-->
-    Starts: <%= time_tag event.start_time %> <%#= distance_of_time_in_words(Time.zone.now, event.start_time) %><br>
+  <div class="bwell-addon1">
+    
+    Starts: <%= time_tag event.start_time %><br>
     Countdown: <%= distance_of_time_in_words(Time.zone.now, event.start_time) %><br>
     Ends: <%= distance_of_time_in_words(Time.zone.now, event.end_time) %> later<br>
-  </span>
+  </div>
   
     <% if !current_user.nil? && current_user.moderator? %>
     <%= link_to "Unlock Event", event, method: :patch %>

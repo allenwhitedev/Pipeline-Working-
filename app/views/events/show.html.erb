@@ -2,37 +2,48 @@
 <div class="ccontainer">
 	
 	    <section>
-	      
+	      <div class="bwell">
 	      <h1>
-	      	<%= @event.title %>
+	      	<li class='bwchild event_title'><%= @event.title %>
 		      	
 		      <% if !current_user.attending?(@event) && @event.checkincode.nil? %>
-		      	<span class="locked-event">[Locked]</span>
+		      	<div class="locked-event">[Locked]</div>
 		      <% else %>
 			      <% if !current_user.attending?(@event) %>
-			      	<span class="unlocked-event">[Unlocked]</span>
+			      	<div class="unlocked-event">[Unlocked]</div>
 			      <% else %>
 			      	<span class="unlocked-event">[Checked In]</span>
 			      <% end %>
 		       <% end %>
+	      
 	      <h2>
-	      	<div class="bwell"><h4><%= @event.comment %><h4></div>  
-	        <div class="bwell">        
+	      </li>
+	      <li class='bwchild  bwell'>
+	      	<h4><%= @event.comment %></h4>  
+	      </li>
+	      
+	      	 <li class='bwchild'>
 	        <%= render 'shared/statse' %>
+	         </li>
+	        <li class='bwchild'>
 	        <% if !current_user.attending?(@event) %>
 	        	Value: 	       
 	        <% else %>
 	        	Earned: +
 	        <% end %>
-	        <%= pluralize(@event.points, 'pt.', 'pts.') %> <br>
-
+	       
+	        <%= pluralize(@event.points, 'pt.', 'pts.') %>
+	        </li>
+	         <li class='bwchild event_title'>
 	        <%= render 'attend_form' if signed_in? %>
 	        <% if current_user.moderator? %>
 	         Checkin code:  <%= @event.checkincode %>
 	        <% else %>
 	        <% end %>
-	      </h2></div>
+	        </li>
+	      </h2>
+	      </div>
 	    </section>
 	 
-	 
+	
 </div>

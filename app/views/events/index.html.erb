@@ -7,11 +7,14 @@
 <%= will_paginate %>
 
 <% if !current_user.nil? %>
+<div class="content_container">
 	
 		<%= show_events_for_user(current_user).html_safe %>
 	
 
 	<%= will_paginate %>
-</div>
+
 <% else %>
 <% end %>
+</div>
+</div>

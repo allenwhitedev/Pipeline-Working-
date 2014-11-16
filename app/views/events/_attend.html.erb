@@ -6,7 +6,7 @@
 		<%= form_for(current_user.eu_rels.build(attended_id: @event.id)) do |f| %>
 	  	<div><%= f.hidden_field :attended_id %></div>
 	  	<%= text_field_tag :code_attempt %>
-	  	<%= f.submit "Checkin to this Event", class: "btn-xlarge", id: "#enlarge-btn" %>
+	  	<%= f.submit "Check In to this Event", class: "btn-xlarge", id: "#enlarge-btn" %>
 	  <% end %>
 	<% else %>
 	<% end %>

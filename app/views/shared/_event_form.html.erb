@@ -1,16 +1,18 @@
-<div class="ccontainer">
+
+<div class='content_container'>
+<div class='bwell'>
 <div class='event_form'>
 <% if !current_user.nil? && current_user.moderator? %>
 <%= form_for(@event) do |f| %>
 
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+   
+      <%= f.text_field :title, placeholder: "Title" %>
 
-      <%= f.label :comment %>
-      <%= f.text_area :comment %>
+   
+      <%= f.text_area :comment, placeholder: 'Description' %>
 
-      <%= f.label :points %>
-      <%= f.number_field :points %>
+   
+      <%= f.number_field :points, placeholder: 'Points' %>
      
      <h2>Starts at:</h2>
       <%= f.datetime_select :start_time, :ampm => true, :minute_step => 5 %>
@@ -23,5 +25,7 @@
     <% end %>
 </div>
 </div>
+</div>
+
 
 <!-- Organization, etc.(not urgent) still to be added in this form when creating an event -->

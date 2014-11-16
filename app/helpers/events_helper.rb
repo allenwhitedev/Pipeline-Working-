@@ -14,11 +14,16 @@ module EventsHelper
     org_events = ""
     organization.reverse_oe_rels.each do |reverse_oe_rel|
       event = Event.find(reverse_oe_rel.attender_id)
-      org_events += "<div class='bwell desk-marg'>
-      <div class='org-img'>#{link_to(image_tag('org_img_grav_placeholder.jpg', :alt => 'org-img'), 
-        organization_url(organization.id))}
-      </div>
-      <h2 class='event-title'>#{event.title}</h2>#{event.comment}</div>"
+      org_events += "<div class='bwell'>
+      <li class='bwchild event_title'>#{link_to(event.title, event )}</li>
+      <li class='bwchild'>#{link_to(image_tag('hsa.jpg', class: 'org-img', :alt => 'org-img'), 
+        organization_url(organization.id))}<span class='event_orga'>#{organization.name}(#{event.points} pts)</span>
+      </li>
+      <li class='event-desc bwchild'>#{event.comment}</li>
+      <li class='bwchild event_times'>
+      Starts: #{time_tag(event.start_time)}<br>
+      Ends: #{time_tag(event.end_time)}
+      </li></div>"
     end
     org_events
   end
