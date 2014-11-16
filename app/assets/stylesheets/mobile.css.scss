@@ -9,6 +9,14 @@
   display: flex;
 }
 
+@mixin flexbox-flex($width) {
+  -webkit-box-flex: $width;
+  -moz-box-flex: $width;
+  -webkit-flex: $width;
+  -ms-flex: $width;
+  flex: $width;
+}
+
 
 
 .dheader { display: none; }
@@ -25,7 +33,7 @@
 	.dheader { display: none; }
 
 	.mheader {
-		display: flex;
+		@include flexbox();
 	}	
 
 	.mfooter  {
@@ -54,7 +62,7 @@
 
 	.mnav {
 
-		flex: 1;
+		@include flexbox-flex(1);
 		text-align: center;
 
 	}
