@@ -1,6 +1,16 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+
+
 .dheader { display: none; }
 
 
@@ -22,7 +32,7 @@
 		position: fixed;
 		bottom: 0%;
 		width: 100%;
-		display: flex;
+		@include flexbox();
 		flex-wrap: nowrap;
 		justify-content: space-between;
 		align-items: flex-start;
