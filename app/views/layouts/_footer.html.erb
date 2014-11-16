@@ -2,13 +2,30 @@
    <%= link_to root_url, class: 'mnav', id: 'mnav1' do %>
    	<i class="fa fa-home"><div class='mnavtext'>Home</div></i>
    <% end %>
-   <%= link_to events_url, class: 'mnav' do %>
+   <%= link_to events_url, class: 'mnav', id: 'mnav2' do %>
    	<i class="fa fa-calendar"><div class='mnavtext'>Events</div></i>
    <% end %>
-      <%= link_to organizations_url, class: 'mnav' do %>
+      <%= link_to organizations_url, class: 'mnav', id: 'mnav3' do %>
    	<i class="fa fa-group"><div class='mnavtext'>Groups</div></i>
    <% end %>
-      <%= link_to current_user, class: 'mnav' do %>
+      <%= link_to current_user, class: 'mnav', id: 'mnav4' do %>
    	<i class="fa fa-user"><div class='mnavtext'>Profile</div></i>
    <% end %>
  </div>
+ BANANAS
+ <% if current_page?(root_path) %>
+   <style>#mnav1 {color: #A1497B;}</style>
+ 
+ <% elsif current_page?(events_path) %>
+   <style>#mnav2 {color: #A1497B;}</style>
+ 
+ <% elsif current_page?(organizations_path) %>
+   <style>#mnav3 {color: #A1497B;}</style>
+ 
+ <% elsif current_page?(current_user) %>
+   <style>#mnav4 {color: #A1497B;}</style>
+
+<% else %>
+   <style>#mnav2 {color: #A1497B;}</style>
+ <% end %>
+
