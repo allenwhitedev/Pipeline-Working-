@@ -63,8 +63,30 @@
 </div>
   
 
+<!--  <li><%= link_to events_path, class: "back_button" do %>
+              <i class="fa fa-angle-double-left"></i>
+            <% end %>
+        </li>
+        <li class="mpage"><a>Specific Event Name<a></li>
+        <li><%= link_to events_path, class: "back_button" do %>
+              <i class="fa fa-angle-double-left"></i>
+            <% end %>
+        </li>
+        -->
       <div class='mheader'>
-        <%= link_to 'Back', users_path %>
+         <li><%= link_to events_path, class: "back_button" do %>
+              <i class="fa fa-angle-double-left mheadtext"></i>
+            <% end %>
+        </li>
+          <li><%= link_to events_path, class: "back_button" do %>
+              <div class='mheadtext curr_page'>Super Cool Event</div>
+            <% end %>
+        </li>
+        <li><%= link_to events_path, class: "back_button" do %>
+              <i class="fa fa-angle-double-left mheadtext" id="future_creator"></i>
+            <% end %>
+        </li>
+
        </div>
 
 
