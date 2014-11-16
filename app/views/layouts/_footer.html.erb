@@ -1,6 +1,14 @@
  <div class="mfooter">
-   <li class='mnav' id="mnav"><a class="nested">A</a></li>
-   <li class='mnav' id="mnav"><a>B</a></li>
-   <li class='mnav' id="mnav"><a>C</a></li>
-   <li class='mnav' id="mnav"><a>D</a></li>
+   <%= link_to root_url, class: 'mnav' do %>
+   	<i class="fa fa-home"><div class='mnavtext'>Home</div></i>
+   <% end %>
+   <%= link_to events_url, class: 'mnav' do %>
+   	<i class="fa fa-calendar"><div class='mnavtext'>Events</div></i>
+   <% end %>
+      <%= link_to organizations_url, class: 'mnav' do %>
+   	<i class="fa fa-group"><div class='mnavtext'>Groups</div></i>
+   <% end %>
+      <%= link_to current_user, class: 'mnav' do %>
+   	<i class="fa fa-user"><div class='mnavtext'>Profile</div></i>
+   <% end %>
  </div>

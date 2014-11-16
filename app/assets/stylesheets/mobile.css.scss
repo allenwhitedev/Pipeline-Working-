@@ -1,3 +1,6 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 .dheader { display: none; }
 
 
@@ -5,9 +8,7 @@
 
 @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
 	
-	body {
-		padding: 0;
-	}
+
 
 	.ccontainer { width: 100%; 	}
 
@@ -17,23 +18,40 @@
 		display: flex;
 	}	
 
-	.mfooter {
+	.mfooter  {
+		position: fixed;
+		bottom: 0%;
+		width: 100%;
 		display: flex;
-				height: 2em;
 		flex-wrap: nowrap;
-		background-color: yellow;
 		justify-content: space-between;
+		align-items: flex-start;
+
+		border-top: 1px solid #584545;
 		list-style: none;
+		background: #E9EAEB;		
+		height: 2em;
+		padding-top: 4px;
 	}
+
+	.mheader  {
+		position: fixed; 
+		top: 0%;
+		width: 100%;
+		background:  #A1497B;
+		height: 2em;
+}
 
 	.mnav {
+
 		flex: 1;
-		border: 1px solid red;
 		text-align: center;
-		line-height: 2em;
+
 	}
 
-
+	.mnavtext {
+		font-size: .5em;
+	}
 
 }
 
