@@ -37,6 +37,23 @@
   justify-content-items: $position;
 }
 
+@mixin flex-order($order) {
+  -webkit-box-ordinal-group: $order;
+  -moz-box-ordinal-group: $order;
+  -ms-flex-order: $order;
+  -webkit-order: $order;
+  order: $order;
+}
+
+/* Acceptable arguments are nowrap | wrap | wrap-reverse;  */
+@mixin flex-wrap($style) {
+  -webkit-box-flex-wrap: $style;
+  -moz-box-flex-wrap: $style;
+  -ms-flex-wrap: $style;
+  -webkit-flex-wrap: $style;
+  flex-wrap: $style;
+}
+
 
 .dheader { display: none; }
 
@@ -56,10 +73,11 @@
 		position: fixed;
 		bottom: 0%;
 		width: 100%;
+		
 		@include flexbox();
-		flex-wrap: nowrap;
-		justify-content: space-between;
-		align-items: flex-start;
+		@include flex-wrap(nowrap);
+		@include flex-justify-content(space-between);
+		@include flex-align-items(flex-start);
 
 		border-top: 1px solid #584545;
 		list-style: none;
@@ -76,7 +94,7 @@
 	}
 
 	#mnav4{
-		order: 4;
+		@include flex-order(4);
 	}
 
 	.mnavtext {
@@ -89,7 +107,7 @@
 		width: 100%;
 	
 		@include flexbox();
-		flex-wrap: nowrap;
+		@include flex-wrap(nowrap);
 		@include flex-justify-content(space-between);
 		@include flex-align-items(center);
 
@@ -136,15 +154,8 @@
 	}
 	*/
 
-	.mheadnav {
-		@include flexbox-flex(1);
-		text-align: center;
-	}
 
 }
-
-
-
 
 
 
