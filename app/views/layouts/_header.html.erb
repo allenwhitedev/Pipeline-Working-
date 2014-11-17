@@ -74,15 +74,15 @@
         </li>
         -->
       <div class='mheader'>
-         <%= link_to events_path, class: "back_button" do %>
+         <%= link_to events_path, class: "mhnav back_button" do %>
               <i class="fa fa-angle-double-left mheadtext"></i>
             <% end %>
         
           
-              <div class='mheadtext curr_page'><%= yield :title %></div>
+              <li class='mhnav mheadtext curr_page'><%= yield :title %></li>
             
         
-        <%= link_to events_path, class: "back_button" do %>
+        <%= link_to events_path, class: "mhnav back_button" do %>
               <i class="fa fa-angle-double-left mheadtext" id="future_creator"></i>
             <% end %>
         

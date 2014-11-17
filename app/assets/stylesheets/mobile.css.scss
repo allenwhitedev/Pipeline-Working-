@@ -83,6 +83,12 @@
 		border-radius: 0 0 4px 4px;
 }
 
+.mhnav {
+		@include flexbox-flex(1);
+		text-align: center;
+		color: grey;
+}
+
 .mheadtext {
 	font-size: 1.3em;
 	color: #fff;
@@ -98,7 +104,7 @@
 }
 
 #future_creator {
-	visibility: hidden;
+	/*visibility: hidden;*/
 }
 
 	/*.back_button {
