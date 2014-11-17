@@ -73,7 +73,7 @@
 		@include flexbox();
 		flex-wrap: nowrap;
 		justify-content: space-between;
-		align-items: center;
+		align-items: flex-end;
 
 
 		font-family: 'Open Sans', sans-serif;
