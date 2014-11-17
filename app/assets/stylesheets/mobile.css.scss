@@ -17,6 +17,16 @@
   flex: $width;
 }
 
+/* Acceptable arguments are  flex-start | flex-end | center | baseline | stretch  */
+@mixin flex-align-items($position) {
+	-webkit-box-align: $position;
+  -moz-box-align: $position;
+  -webkit-flex-align: $position;
+  -ms-flex-align: $position;
+  -webkit-align-items: $position;
+  align-items: $position;
+}
+
 .dheader { display: none; }
 
 
@@ -73,7 +83,7 @@
 		@include flexbox();
 		flex-wrap: nowrap;
 		justify-content: space-between;
-		align-items: flex-end;
+		@include flex-align-items(flex-end);
 
 
 		font-family: 'Open Sans', sans-serif;
