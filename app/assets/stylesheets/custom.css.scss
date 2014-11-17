@@ -1,20 +1,4 @@
-
-@mixin flexbox() {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
-
-@mixin flexbox-flex($width) {
-  -webkit-box-flex: $width;
-  -moz-box-flex: $width;
-  -webkit-flex: $width;
-  -ms-flex: $width;
-  flex: $width;
-}
-
+@import 'mixins-flexbox';
 
 li {
   list-style: none;

@@ -1,0 +1,53 @@
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flexbox-flex($width) {
+  -webkit-box-flex: $width;
+  -moz-box-flex: $width;
+  -webkit-flex: $width;
+  -ms-flex: $width;
+  flex: $width;
+}
+
+/* Acceptable arguments are  flex-start | flex-end | center | baseline | stretch  */
+@mixin flex-align-items($position) {
+  -webkit-box-align: $position;
+  -moz-box-align: $position;
+  -webkit-flex-align: $position;
+  -ms-flex-align: $position;
+  -webkit-align-items: $position;
+  align-items: $position;
+}
+
+/* Acceptable arguments are flex-start | flex-end | center | space-between | space-around */
+@mixin flex-justify-content($position) {
+  -webkit-box-justify-content: $position;
+  -moz-box-justify-content: $position;
+  -webkit-flex-justify-content: $position;
+  -ms-flex-justify-content: $position;
+  -webkit-justify-content-items: $position;
+  justify-content-items: $position;
+}
+
+@mixin flex-order($order) {
+  -webkit-box-ordinal-group: $order;
+  -moz-box-ordinal-group: $order;
+  -ms-flex-order: $order;
+  -webkit-order: $order;
+  order: $order;
+}
+
+/* Acceptable arguments are nowrap | wrap | wrap-reverse;  */
+@mixin flex-wrap($style) {
+  -webkit-box-flex-wrap: $style;
+  -moz-box-flex-wrap: $style;
+  -ms-flex-wrap: $style;
+  -webkit-flex-wrap: $style;
+  flex-wrap: $style;
+} 
