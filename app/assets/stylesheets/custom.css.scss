@@ -37,6 +37,15 @@ li a {
 
 /* application-wide */
 
+/* alerts */
+.alert { background: yellow; color: red; height: 3em; line-height: 3em; }
+
+.alert-success { background: green; color: blue; }
+
+.alert-success { background: rgba(181, 100, 255, 0.4); color: #A1497B  }
+
+
+
 body {
 	padding: 60px 0;
 	background-color: #E9EAEB;

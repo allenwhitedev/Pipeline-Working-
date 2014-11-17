@@ -50,6 +50,7 @@
 		background: #E9EAEB;		
 		height: 2em;
 		padding-top: .45em;
+		border-radius: 2px 2px 0 0;
 	}
 
 	.mnav {
@@ -58,7 +59,9 @@
 		color: grey;
 	}
 
-
+	#mnav4{
+		order: 4;
+	}
 
 
 	.mnavtext {
@@ -79,8 +82,9 @@
 
 		font-family: 'Open Sans', sans-serif;
 		list-style: none;
-		background: #A1497B;		
-		height: 2em;
+		background: rgba(161, 73, 123, .8);		
+		height: 2.5em;
+		border-radius: 0 0 4px 4px;
 }
 
 .mheadtext {
