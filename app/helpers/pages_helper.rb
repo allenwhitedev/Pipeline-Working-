@@ -7,87 +7,87 @@ module PagesHelper
 		month_days = (end_date-start_date).to_i 
 
 		day_of_week = start_date.strftime("%w").to_i
-		cal = "<table border='1'>"
-		cal += "<tr>"
+		cal = "" #<div class='calendar'>
+		#cal += "<div class='cal-row'>"
 		days = %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday)
 		days.each do |day|
-			cal += "<td>#{day}</td>"
+			#cal += "<li class='cal-day'>#{day}</li>"
 		end
-		cal += "</tr>"
+		#cal += "</div>"
 		
 		blank_counter = 0
 		counter = 1
 		
 		#first row(w/ blank spaces)
-		cal += "<tr>"
+		cal += "<div class='cal-row'>"
 		day_of_week.times do |day|
-			cal += "<td>&nbsp;</td>"
+			cal += "<li class='cal-day'>&nbsp;</li>"
 			blank_counter += 1
 		end
 		(7- day_of_week).times do |day|
-			cal += "<td>#{day+1}</td>"
+			cal += "<li class='cal-day'>#{day+1}</li>"
 			counter += 1 
 		end
 		counter_offset = counter 
-		cal += "</tr>"
+		cal += "</div>"
 
 		#second row
-		cal += "<tr>"
+		cal += "<div class='cal-row'>"
 		(7).times do |day|
-			cal += "<td>#{day+counter_offset}</td>"
+			cal += "<li class='cal-day'>#{day+counter_offset}</li>"
 			counter += 1 
 		end
 		counter_offset = counter
-		cal += "</tr>"
+		cal += "</div>"
 
 		#third row
-		cal += "<tr>"
+		cal += "<div class='cal-row'>"
 		(7).times do |day|
-			cal += "<td>#{day+counter_offset}</td>"
+			cal += "<li class='cal-day'>#{day+counter_offset}</li>"
 			counter += 1  
 		end
 		counter_offset = counter
-		cal += "</tr>"
+		cal += "</div>"
 
 		#fourth row(last row if first day of month is on Sunday but is filled up, so no issue :_)
-		cal += "<tr>"
+		cal += "<div class='cal-row'>"
 		(7).times do |day|
-			cal += "<td>#{day+counter_offset}</td>"
+			cal += "<li class='cal-day'>#{day+counter_offset}</li>"
 			counter += 1 
 		end
 		counter_offset = counter
-		cal += "</tr>"		
+		cal += "</div>"		
 
 		#fifth row(sometimes the last row is the fifth row)
 		if counter <= (month_days - 7) #<= rather than < because counter starts at 1, not 0 
-			cal += "<tr>"
+			cal += "<div class='cal-row'>"
 			(7).times do |day|
-				cal += "<td>#{day+counter_offset}</td>"
+				cal += "<li class='cal-day'>#{day+counter_offset}</li>"
 				counter += 1 
 			end
 			counter_offset = counter
-			cal += "</tr>"
+			cal += "</div>"
 		else
 		end	
 
 		#last row(w/ blank spaces)
-		cal += "<tr>"
+		cal += "<div class='cal-row'>"
 		(month_days - counter + 1).times do |day|
-			cal += "<td>#{day+counter_offset}</td>"	
+			cal += "<li class='cal-day'>#{day+counter_offset}</li>"	
 		end
 		
 		if blank_counter > 0 || month_days != 28
 			(35 - blank_counter - month_days).times do |day|
-				cal += "<td>&nbsp;</td>"	
+				cal += "<li class='cal-day'>&nbsp;</li>"	
 			end
 		end
 		if blank_counter + month_days > 35
 			(42 - blank_counter - month_days).times do |day|
-				cal += "<td>&nbsp;</td>"
+				cal += "<li class='cal-day'>&nbsp;</li>"
 			end			
 		end
-		cal += "</tr>"
-		cal += "</table>"
+		cal += "</div>"
+		cal += ""#</div>
 	
 	end
 

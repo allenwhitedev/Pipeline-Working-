@@ -1,23 +1,5 @@
 <%= provide(:title, 'Home') %>
 <h1 class="calheader">Dynamic Calendar Test</h1><style>.calheader {text-align: center;}</style>
-<!--
-<div class="cal-row">
-<li class='cal-day'>1</li>
-<li class='cal-day'>2</li>
-<li class='cal-day'>3</li>
-<li class='cal-day'>4</li>
-<li class='cal-day'>5</li>
-<li class='cal-day'>6</li>
-<li class='cal-day'>7</li>
-</div><div class='cal-row'>
-<li class='cal-day'>1</li>
-<li class='cal-day'>2</li>
-<li class='cal-day'>3</li>
-<li class='cal-day'>4</li>
-<li class='cal-day'>5</li>
-<li class='cal-day'>6</li>
-<li class='cal-day'>7</li>
-</div>
--->
+
 <%= Date::MONTHNAMES[@month] %> <%#= @year %>
 <%= calendar(@month, @year).html_safe %>
