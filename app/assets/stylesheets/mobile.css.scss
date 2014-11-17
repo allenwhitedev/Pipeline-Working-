@@ -40,9 +40,6 @@
 
 	.dheader { display: none; }
 
-	.mheader {
-		@include flexbox();
-	}	
 
 	.mfooter  {
 		position: fixed;
@@ -83,7 +80,7 @@
 		@include flexbox();
 		flex-wrap: nowrap;
 		justify-content: space-between;
-		@include flex-align-items(flex-end);
+		@include flex-align-items(center);
 
 
 		font-family: 'Open Sans', sans-serif;
