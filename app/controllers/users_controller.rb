@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 			sign_in @user
       # current_user.join!(Organization.find(1)) #temp for demo, users should auto join their organization through separate 
       # organization login/signup pages
-			flash[:success] = "Welcome to the Pipeline, you can now check in to events and join other organizations"
+			flash[:success] = "Welcome to Pipeline, you can now checkin/join groups"
 			redirect_to events_url
 		else
 			render 'new'
@@ -50,7 +50,6 @@ class UsersController < ApplicationController
   end
 
    def attending
-    @title = "Attending" # get rid of this and go through show_attend view for users
     @user = User.find(params[:id])
     @events = @user.attended_events.paginate(page: params[:page])
     render 'show_attend'
