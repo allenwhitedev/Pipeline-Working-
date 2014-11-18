@@ -55,8 +55,8 @@ body {
   margin: .75em auto;
   border: 1.5px solid #BEBDBF;
   @include flexbox();
-  flex-direction: column;
-  align-content: space-between;
+  @include flex-direction(column);
+  @include flex-align-content(space-between);
 }
 
 .bwchild {

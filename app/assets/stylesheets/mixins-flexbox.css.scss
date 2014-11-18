@@ -25,6 +25,17 @@
   align-items: $position;
 }
 
+
+/* Acceptable arguments are flex-start | flex-end | center | space-between | space-around | stretch */
+@mixin flex-align-content($position){
+  -webkit-box-align-content: $position;
+  -moz-box-align-content: $position;
+  -webkit-flex-align-content: $position;
+  -ms-flex-align-content: $position;
+  -webkit-align-content: $position;
+  align-content: $position;
+  }
+
 /* Acceptable arguments are flex-start | flex-end | center | space-between | space-around */
 @mixin flex-justify-content($position) {
   -webkit-box-justify-content: $position;
@@ -43,11 +54,21 @@
   order: $order;
 }
 
-/* Acceptable arguments are nowrap | wrap | wrap-reverse;  */
+/* Acceptable arguments are nowrap | wrap | wrap-reverse  */
 @mixin flex-wrap($style) {
   -webkit-box-flex-wrap: $style;
   -moz-box-flex-wrap: $style;
   -ms-flex-wrap: $style;
   -webkit-flex-wrap: $style;
   flex-wrap: $style;
+} 
+
+
+/* Acceptable arguments are row | row-reverse | column | column-reverse  */
+@mixin flex-direction($dir) {
+  -webkit-box-flex-direction: $dir;
+  -moz-box-flex-direction: $dir;
+  -ms-flex-direction: $dir;
+  -webkit-flex-direction: $dir;
+  flex-wrap: $dir;
 } 
