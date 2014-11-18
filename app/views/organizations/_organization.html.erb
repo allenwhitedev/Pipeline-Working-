@@ -1,10 +1,13 @@
 <div class='bwell'>
-  <li>
-  <span class="event_title"> <%= link_to organization.name, organization %></span><style>.event_title {font-size: 2.5em;}</style>
-  <style>.points { font-size: 1.25em; }</style>
+  <li class='bwchild text1-5'>
+  <%= link_to image_tag('hsa.jpg', class: 'org-img', :alt => 'org-img'), 
+        organization_url(organization.id) %>
+  <%= link_to organization.name, organization %>
+  </li>
+  <div class='bwchild'>
   <span class="comment"><%= organization.description %></span>
   <span class="points"><%= pluralize(organization.joiners.count, 'member') %></span> <!-- Add members here -->
-  <br> 
+  </div> 
   
     <%# if current_user.gleader %>
       <%#= link_to "View Members", organization %>
@@ -16,5 +19,5 @@
                                      title: organization.name %>
   <% else %>
   <% end %>
-</li>
+
 </div>

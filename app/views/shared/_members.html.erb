@@ -1,4 +1,4 @@
-<% provide(:title, @organization.name) %>
+
 <style>h3 {text-align: center;}</style>
 <% if current_user.nil? || !current_user.moderator? %>
 
@@ -7,7 +7,7 @@
         <%= render 'shared/stats' %>
        
     
-      <h3><%= @organization.name %> Members</h3>
+      <h3 class='centext'><%= @organization.name %> Members</h3>
       <% if @users.any? %>
       <div class='center-wrapper'>
         <ul class="users">
@@ -22,25 +22,16 @@
 
 <% else %>
 <!-- Will sort this out once checkin button works -->
-<% provide(:title, @organization.name) %>
+
       <section>
         <%= render 'shared/stats' %>         
       </section>
-    <div class="bpanel bpanel-default">
-    <div class="bpanel-heading"><h3><%= @organization.name %> Members</h3><style>h3 {text-align: center;}</style></div>
-    <table class="btable">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Points</th>      
-    </tr>  
-    </thead>
-    <tbody>
+   <h3 class='centext'><%= @organization.name %> Members</h3>
+
+    <div class='bwell'>
       <% if @users.any? %>
           <%= render @users %>
       <% end %>
-    </tbody>
-    </table>
     </div>
+ 
   <% end %>

@@ -1,39 +1,38 @@
 <% provide(:title, @event.title) %>
+<div class='img_stretch'><%= image_tag('hsa.jpg', class: 'org-img-full', :alt => 'org-img') %></div>
 <div class="ccontainer">
 	
 	    <section>
 	      <div class="bwell">
 	      <h1>
 	      	<li class='bwchild event_title'><%= @event.title %>
-		      	
+		    
+	      	<div>
 		      <% if !current_user.attending?(@event) && @event.checkincode.nil? %>
-		      	<div class="locked-event">[Locked]</div>
+		      	<span class="locked-event">[Locked]</span>
 		      <% else %>
 			      <% if !current_user.attending?(@event) %>
-			      	<div class="unlocked-event">[Unlocked]</div>
+			      	<span class="unlocked-event">[Unlocked]</span>
 			      <% else %>
 			      	<span class="unlocked-event">[Checked In]</span>
+			      	Earned: +
 			      <% end %>
+			      
 		       <% end %>
-	      
+	      <li class='points centext'>(<%= pluralize(@event.points, 'pt.', 'pts.') %>)</li>
+	      	</div>
 	      <h2>
 	      </li>
-	      <li class='bwchild  bwell'>
+
+
+	      <li class='bwchild bwell'>
 	      	<h4><%= @event.comment %></h4>  
 	      </li>
 	      
 	      	 <li class='bwchild'>
 	        <%= render 'shared/statse' %>
 	         </li>
-	        <li class='bwchild'>
-	        <% if !current_user.attending?(@event) %>
-	        	Value: 	       
-	        <% else %>
-	        	Earned: +
-	        <% end %>
-	       
-	        <%= pluralize(@event.points, 'pt.', 'pts.') %>
-	        </li>
+	        
 	         <li class='bwchild event_title'>
 	        <%= render 'attend_form' if signed_in? %>
 	        <% if current_user.moderator? %>

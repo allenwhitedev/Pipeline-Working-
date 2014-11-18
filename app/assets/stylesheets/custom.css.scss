@@ -1,5 +1,7 @@
 @import 'mixins-flexbox';
 
+/* html elements */
+
 li {
   list-style: none;
   font-family: 'Open Sans', sans-serif;
@@ -8,9 +10,11 @@ li {
 li a {
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-weight: 500;
 }
 
-/* extend classes */
+/* extend classes CLEAN THIS UP */
 
 
 .center-inline-block {
@@ -22,6 +26,7 @@ li a {
 
 
 /* application-wide */
+
 
 /* alerts */
 .alert { background: yellow; color: red; height: 3em; line-height: 3em; }
@@ -59,10 +64,10 @@ body {
   @include flex-align-content(space-between);
 }
 
+
 .bwchild {
   @include flexbox-flex(1);
-  padding-left: .5em;
-  padding-right: .5em;
+  padding: .5em;
 }
 
 .alert{
@@ -75,6 +80,19 @@ body {
   vertical-align: middle;
   height: 3em;
   width: 3em;
+}
+
+.org-img-full {
+    display: block;
+    margin: 0 auto;
+}
+
+.img_stretch {
+  background: #fff; 
+  /* This color will have to take the dominant color 
+  from a picture provided if no stretching is to occur,
+  and there exists such a way to do this(search treehouse show) */
+  margin: 0 auto;
 }
 
 .event_title {
@@ -91,14 +109,25 @@ body {
   color: grey;
 }
 
-.bwell-rel {
 
+/* Positioning classes */
 
+.flex_dir-row- {
+  @include flex-direction(row);
 }
 
 .block {
   display: block;
 }
+
+
+.centext {
+  text-align: center;
+}
+
+.text1-5 {
+  font-size: 1.5em;
+}   
 
 
 #black-attempt {
@@ -156,10 +185,10 @@ body {
 
 /* events-comments */
 
-
-
-.event-title {
-  
+.points {
+  color: grey;
+  font-size: .8em;
+  padding-bottom: .5em;
 }
 
 .comment {

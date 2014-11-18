@@ -26,6 +26,7 @@
 		@include flex-justify-content(space-between);
 		@include flex-align-items(flex-start);
 
+		font-size: 1.25em;
 		border-top: 1px solid #584545;
 		list-style: none;
 		background: #E9EAEB;		
@@ -45,6 +46,7 @@
 	}
 
 	.mnavtext {
+		margin-top: 1px;
 		font-size: .5em;
 	}
 

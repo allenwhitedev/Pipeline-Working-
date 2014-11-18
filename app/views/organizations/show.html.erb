@@ -1,11 +1,12 @@
-
+<% provide(:title, @organization.name) %>
 <div class="ccontainer">
 <div class='bwell'>
-<h1><%= @organization.name %></h1>
-<div class='bwell'>
+<div class='bwchild'><%= image_tag('hsa.jpg', class: 'org-img-full bwchild', :alt => 'org-img') %></div>
+<div class='bwell bwchild'>
 <h4><%= @organization.description %></h4>
-</div>
 <h2><%= pluralize(@organization.joiners.count, 'member') %></h2>
+</div>
+
 
 <% if current_user.nil? %>
 	<h3><%= link_to "Login/Signup First to Join #{@organization.name}",	 signin_path %></h3>

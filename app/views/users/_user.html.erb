@@ -1,9 +1,10 @@
-<li class="listed_user">
+<li class="">
   <% if current_user.nil? || !current_user.moderator? %>
   <%= gravatar_for user, size: 52 %>
   <%= link_to user.name, user %>
   <% else %>
-  <tr><td><%= link_to user.name, user %></td> <td><%= user.email %></td> <td><%= user.total_points %></td></tr>
+  <li class='bwchild centext'><%= link_to "#{user.name} (#{user.total_points} pts)", user %></li> 
+  <li class='bwchild centext'><%= user.email %> </li>
   <% end %>
   <% if !current_user.nil? && current_user.admin? && !current_user(user) %>
   	<%= link_to "Delete This User", user, method: :delete, data: { confirm: "Are you absolutely sure? This will delete the user from Pipeline." } %>
