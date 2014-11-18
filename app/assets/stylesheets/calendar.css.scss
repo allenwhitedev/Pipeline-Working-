@@ -2,19 +2,33 @@
 
 /* CALENDAR STYLINGS (Plus some form stylings) */
 
-
+.calheader {
+	text-align: center;
+	margin: 10px 0;
+}
 
 .cal-row {
 	@include flexbox();
 	font-size: .85em;
 }
 
-
-
 .cal-day {
 	@include flexbox-flex(1);
 	padding: 1px 0 0 1px;
 	background-color: #fff;
-	border: 1px solid #FCFCFC;
+	border: 1px solid #FCFCFC; /* subtle border b/c 1px looks to large */
 	height: 4em;
+}
+
+.dow {
+	text-align: center;
+	line-height: 2em;
+	height: 2em;
+	background: #A1497B;
+	color: #fff;
+}
+
+.cal-dow {
+	@include flexbox-flex(1);
+	margin: -1px 0;
 }

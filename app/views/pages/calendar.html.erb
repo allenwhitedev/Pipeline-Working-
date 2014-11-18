@@ -1,5 +1,5 @@
 <%= provide(:title, 'Home') %>
-<h1 class="calheader">Dynamic Calendar Test</h1><style>.calheader {text-align: center;}</style>
 
-<%= Date::MONTHNAMES[@month] %> <%#= @year %>
+<div class="calheader"><%= Date::MONTHNAMES[@month] %> <%= @year %></div>
+
 <%= calendar(@month, @year).html_safe %>

@@ -7,13 +7,13 @@ module PagesHelper
 		month_days = (end_date-start_date).to_i 
 
 		day_of_week = start_date.strftime("%w").to_i
-		cal = "" #<div class='calendar'>
-		#cal += "<div class='cal-row'>"
-		days = %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday)
+		cal = "<div class='calendar'>"
+		cal += "<div class='cal-row dow'>"
+		days = %w(Sun Mon Tue Wed Thu Fri Sat)
 		days.each do |day|
-			#cal += "<li class='cal-day'>#{day}</li>"
+			cal += "<li class='cal-dow'>#{day}</li>"
 		end
-		#cal += "</div>"
+		cal += "</div>"
 		
 		blank_counter = 0
 		counter = 1
@@ -87,7 +87,7 @@ module PagesHelper
 			end			
 		end
 		cal += "</div>"
-		cal += ""#</div>
+		cal += "</div>"
 	
 	end
 
