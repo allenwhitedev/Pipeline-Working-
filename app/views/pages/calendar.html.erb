@@ -1,5 +1,5 @@
 <%= provide(:title, 'Home') %>
 
-<div class="calheader"><%= Date::MONTHNAMES[@month] %> <%= @year %></div>
+<div class="calheader">November<%#= Date::MONTHNAMES[@month] %> 2014 <%#= @year %></div>
 
-<%= calendar(@month, @year).html_safe %>
+<%= calendar(@month-1, @year).html_safe %>
