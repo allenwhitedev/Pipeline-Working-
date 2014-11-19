@@ -28,3 +28,6 @@ end
 
 gem 'bcrypt-ruby', '3.1.2'
 gem 'will_paginate'
+
+# most recent
+gem 'fastclick-rails', '1.0.1'
