@@ -1,27 +1,42 @@
 <% provide(:title, @user.name) %>
 <div class="ccontainer">
 	
-	    <div class="bwell">
+	    <div class="bwell centext">
 	      <li class='bwchild'>
 	        <%#= gravatar_for @user %> 
-	        <%= @user.name %> <%= @user.total_points %>
+	        <%= @user.name %> (<%= @user.total_points %> pts)
+	        </li>
+
+	        <li class='bwchild'>
 	        </li>
 	        <li class='bwchild'>
+	        </li><li class='bwchild'>
+	        </li>
+
+
+	        <li class='bwchild pane'>
 	        <% if !current_user.nil? && current_user.moderator? %>
 	         (<%= @user.email %>) 	
 	         <% else %>
 	         <% end %>
-	         </li>
 
-	        <li class='bwchild'> 
-	        <%= render 'shared/stats' %>
-	      
-	        <%= link_to 'Event History', '/users/' + @user.id.to_s + '/attending' %>	
-	      
-	         <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-             <li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
-	        Member of: (Coming Soon)	
+	         <%= link_to 'Event History', '/users/' + @user.id.to_s + '/attending' %>
 	        </li>
+
+	         <!--
+	        <li class='bwchild'> 
+	        <%#= render 'shared/stats' %>
+	      	</li>
+	      	-->
+	        	
+	      
+	         <li class="bwchild pane blue">Organizations (Coming Soon)</li>
+	         <li class="bwchild pane"><%= link_to "Settings", edit_user_path(current_user) %></li>
+             
+           <li class="bwchild pane"><%= link_to "Sign Out", signout_path, method: "delete" %></li>
+	        
+	         	
+	         
 
 	    </div>
 	  

@@ -190,8 +190,8 @@ body {
   margin: 0 auto;
 }
 
-.mar10px-b {
-  margin-bottom: 10px;
+.mar30px-b {
+  margin-bottom: 30px;
 }
 
 
@@ -242,14 +242,18 @@ body {
             border-radius: 8px;
 }
 
-.tmp-bigger {
-  height: 2em;
-  width: 6em;
+.pane {
+  border-top: 1px solid #E9EAEB;
+  border-bottom: 1px solid #E9EAEB;
 }
 
 /* Maybe have all red/green text stylings in two classes/ids and then comment them */
 .locked-event {
 	color: red;
+}
+
+.blue {
+  color: blue;
 }
 
 .unlocked-event {
