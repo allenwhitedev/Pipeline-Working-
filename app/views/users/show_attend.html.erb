@@ -1,25 +1,24 @@
 <!-- Will sort this out once checkin button works -->
 <% provide(:title, 'Event History') %>
 <div class="ccontainer">
-
+<div class='bwell centext'>
   
-      <%= gravatar_for @user %>
-      <h1><%= @user.name %></h1>
-      <span><%= link_to "view my profile", @user %></span>
-     
-    </section>
-    <section>
-      <%= render 'shared/stats' %>
+      <%#= gravatar_for @user %>
+      <li class='bwchild text1-5 marg30px-b'>
+      <%= link_to @user.name, @user %>
+      </li>     
+    
+
+      <%#= render 'shared/stats' %>
       
-        
-      
-   
-    <h3>Attended Events</h3><style> h3 { text-align: center;}</style> 
-    <% if @events.any? %>
-      <ul class="users">
-        <%= render @events %>
-      </ul>
-      <%= will_paginate @events %>
-    <% end %>
 </div>
+
+<div class="content_container">
+  <% if @events.any? %>
+    <%= render @events %>
+      
+    <%= will_paginate @events %>
+  <% end %>
+
+</div>    
 </div>
