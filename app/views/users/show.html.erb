@@ -1,24 +1,28 @@
 <% provide(:title, @user.name) %>
 <div class="ccontainer">
 	
-	    <div class="ushow-wrapper"><style>.ushow-wrapper { margin: 0 auto; }</style>
-	      <h1>
-	        <%= gravatar_for @user %>
-	        <%= @user.name %>
+	    <div class="bwell">
+	      <li class='bwchild'>
+	        <%#= gravatar_for @user %> 
+	        <%= @user.name %> <%= @user.total_points %>
+	        </li>
+	        <li class='bwchild'>
 	        <% if !current_user.nil? && current_user.moderator? %>
 	         (<%= @user.email %>) 	
 	         <% else %>
 	         <% end %>
+	         </li>
+
+	        <li class='bwchild'> 
 	        <%= render 'shared/stats' %>
-	        <br>
-	        	Points: <%= @user.total_points %>
-	        <br>
+	      
 	        <%= link_to 'Event History', '/users/' + @user.id.to_s + '/attending' %>	
-	        <br>
+	      
 	         <li><%= link_to "Settings", edit_user_path(current_user) %></li>
              <li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
 	        Member of: (Coming Soon)	
-	      </h1>
+	        </li>
+
 	    </div>
 	  
 	  

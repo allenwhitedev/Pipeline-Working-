@@ -1,19 +1,28 @@
 <% provide(:title, "Sign in") %>
 
 
-  <div class="form-area">
-  <div class="orga-signin">HSA Login</div>
-  <style>.orga-signin {text-align: center; font-size: 2.5em; margin-top: 1em; }</style>
-<%= form_for(:session, url: sessions_path) do |f|  %>
-	
-	<%= f.label :email %>
-	<%= f.text_field :email %>
-
-	<%= f.label :password %>
-	<%= link_to "(forgot password)", forgot_password_path %>
-	<%= f.password_field :password %>
-
-	<%= f.submit "Sign In", class: "btn btn-large btn-primary" %>
+  <div class="bwell centext bmarg">
+ 
+  <li class='bwchild'>
+		<%= form_for(:session, url: sessions_path) do |f|  %>
+	</li>	
+	<li class='bwchild centext'>
+		<%= f.label :email %>
+	</li>
+		<%= f.text_field :email, class: 'field email_field' %>
+	</li>
+	<li class='bwchild centext'>
+		<%= f.label :password %>
+	</li>
+	<li class='bwchild'>	
+		<%= f.password_field :password, class: 'field' %>
+	</li>		
+		<%= link_to "(forgot password)", forgot_password_path, class: "" %>
+		
+	</li>
+	<li class='bwchild'>
+	<%= f.submit "Sign In", class: "btn-xlarge .tmp-bigger" %>
+	</li>
 <% end %>
 <p><%= link_to "Don't have a Pipeline account? Sign up Here", signup_path %></p>
  </div>

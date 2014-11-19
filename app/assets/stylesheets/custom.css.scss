@@ -177,9 +177,22 @@ body {
 
 
 
-/* Media queries for non calendar pages */
+/* Account stuff */
 
+.field {
+  border: 0px solid #fff;
+  border-bottom: 2px solid grey;
+  height: 2em;
+}
 
+.email_field {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.mar10px-b {
+  margin-bottom: 10px;
+}
 
 
 
@@ -227,6 +240,11 @@ body {
     -webkit-border-radius: 8px;
        -moz-border-radius: 8px;
             border-radius: 8px;
+}
+
+.tmp-bigger {
+  height: 2em;
+  width: 6em;
 }
 
 /* Maybe have all red/green text stylings in two classes/ids and then comment them */
