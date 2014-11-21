@@ -32,3 +32,4 @@ gem 'will_paginate'
 # most recent
 gem 'fastclick-rails', '1.0.1'
 gem 'turbolinks', '2.5.2'
+gem 'devise', '3.4.1'
