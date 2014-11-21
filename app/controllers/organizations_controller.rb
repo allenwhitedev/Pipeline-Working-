@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-  before_action :signed_in_user, only: [:create, :destroy]
+  #before_action :signed_in_user, only: [:create, :destroy]
 
   def create
   	@organization = Organization.new(orga_params)

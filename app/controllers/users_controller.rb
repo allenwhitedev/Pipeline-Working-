@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:edit, :update, :index, :destroy, :attending]
+  #before_action :signed_in_user, only: [:edit, :update, :index, :destroy, :attending]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: [:destroy]
-  before_action :get_user, only: [:reset_password, :reset_password_submit]
+  before_action :get_user, only: [:reset_password, :reset_password_submit] #might have to remove for devise
 
 	def create
 		@user = User.new(user_params)

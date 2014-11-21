@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 	has_many :events, dependent: :destroy
 	has_many :eu_rels, class_name: "EuRel", foreign_key: "attender_id", dependent: :destroy
 	has_many :ou_rels, class_name: "OuRel", foreign_key: "joiner_id", dependent: :destroy
@@ -6,13 +10,13 @@ class User < ActiveRecord::Base
 
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token
-	attr_accessor :reset_token
+	attr_accessor :reset_token, :name
 	
-	validates :name, length: { in: 2..50 }
+	#validates :name, length: { in: 2..50 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	validates :email, uniqueness: true, length: { in: 2..50 }, format: { with: VALID_EMAIL_REGEX }
-	validates :password, length: { minimum: 6 }
-	has_secure_password
+	#validates :email, uniqueness: true, length: { in: 2..50 }, format: { with: VALID_EMAIL_REGEX }
+	#validates :password, length: { minimum: 6 }
+	# has_secure_password removed for devise
 
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64

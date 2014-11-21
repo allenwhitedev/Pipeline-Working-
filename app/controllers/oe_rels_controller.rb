@@ -1,5 +1,5 @@
 class OeRelsController < ApplicationController
-  before_action :signed_in_user
+  #before_action :signed_in_user
 
   def create
     #?@event = Event.find(params[:id])
