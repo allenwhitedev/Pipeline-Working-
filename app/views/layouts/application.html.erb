@@ -47,6 +47,7 @@
 <% else %>
   <%= link_to 'SignUp', new_user_registration_path %>
   <%= link_to 'SignIn', new_user_session_path %>
+  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 <% end %>
 </div>
 <%= render 'layouts/footer' %>

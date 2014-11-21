@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook] 
 	has_many :events, dependent: :destroy
 	has_many :eu_rels, class_name: "EuRel", foreign_key: "attender_id", dependent: :destroy
 	has_many :ou_rels, class_name: "OuRel", foreign_key: "joiner_id", dependent: :destroy
@@ -17,6 +17,17 @@ class User < ActiveRecord::Base
 	#validates :email, uniqueness: true, length: { in: 2..50 }, format: { with: VALID_EMAIL_REGEX }
 	#validates :password, length: { minimum: 6 }
 	# has_secure_password removed for devise
+
+
+  def self.from_omniauth(auth)
+  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+      user.name = auth.info.name   # assuming the user model has a name
+      user.image = auth.info.image # assuming the user model has an image
+    end
+  end
+
 
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   match 'reset_password', to: 'users#reset_password', via: 'get' # this get is fine, it's the link provided in emails
   match 'reset_password_submit', to: 'users#reset_password_submit', via: 'patch'
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
     match '/signup', to: 'devise/registrations#new', via: 'get'
     match '/signin', to: 'devise/sessions#new', via: 'get'
