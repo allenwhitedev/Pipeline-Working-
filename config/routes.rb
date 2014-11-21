@@ -1,29 +1,25 @@
 Rails.application.routes.draw do
-  
+ 
+  # Maybe this will be done with devise in future( they may have better security)
+  match 'password_reset_request', to: 'users#password_reset_request', via: 'patch' #rename this with request
+  match 'forgot_password', to: 'users#forgot_password', via: 'get'
+  match 'reset_password', to: 'users#reset_password', via: 'get' # this get is fine, it's the link provided in emails
+  match 'reset_password_submit', to: 'users#reset_password_submit', via: 'patch'
+
   devise_for :users
-  root 'sessions#new'
+  devise_scope :user do
+    match '/signup', to: 'devise/registrations#new', via: 'get'
+    match '/signin', to: 'devise/sessions#new', via: 'get'
+    match '/signout', to: 'devise/sessions#destroy', via: 'delete'
+    root to: 'organizations#index'
+  end
+
+  
 
   match '/pipeline', to: 'pages#pipeline', via: 'get'
-
   match '/calendar', to: 'pages#calendar', via: 'get'
-
   match '/help', to: 'pages#help', via: 'get'
 
-  match '/signup', to: 'users#new', via: 'get' 
-
-  match '/signin', to: 'sessions#new', via: 'get'
-
-  match '/signout', to: 'sessions#destroy', via: 'delete'
-
-  match '/help', to: 'pages#help', via: 'get'
-
-  match 'password_reset_request', to: 'users#password_reset_request', via: 'patch' #rename this with request
-
-  match 'forgot_password', to: 'users#forgot_password', via: 'get'
-
-  match 'reset_password', to: 'users#reset_password', via: 'get' # this get is fine, it's the link provided in emails
-
-  match 'reset_password_submit', to: 'users#reset_password_submit', via: 'patch'
 
   match 'organizations/signup', to: 'organizations#new', via: 'get'
 
@@ -35,12 +31,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :sessions, only: [:new, :create, :destroy]
+  #resources :sessions, only: [:new, :create, :destroy]
 
   resources :eu_rels, only: [:create, :destroy]
-
   resources :ou_rels, only: [:create, :destroy]
-
   resources :oe_rels, only: [:create, :destroy]
 
   resources :events  do

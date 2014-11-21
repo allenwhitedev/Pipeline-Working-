@@ -27,7 +27,8 @@ class OrganizationsController < ApplicationController
   end
 
   def index
-  	@organizations = Organization.paginate(page: params[:page])
+    flash[:info] = "Sign In, or Learn More" unless user_signed_in?	 
+    @organizations = Organization.paginate(page: params[:page])
   end
 
   def joiners 

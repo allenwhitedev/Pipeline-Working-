@@ -1,28 +1,30 @@
-<% provide(:title, "Sign in") %>
+<!--
+<%# provide(:title, "Sign in") %>
 
 
   <div class="bwell centext bmarg">
  
   <li class='bwchild'>
-		<%= form_for(:session, url: sessions_path) do |f|  %>
+		<%#= form_for(:session, url: sessions_path) do |f|  %>
 	</li>	
 	<li class='bwchild centext'>
-		<%= f.label :email %>
+		<%#= f.label :email %>
 	</li>
-		<%= f.text_field :email, class: 'field email_field' %>
+		<%=# f.text_field :email, class: 'field email_field' %>
 	</li>
 	<li class='bwchild centext'>
-		<%= f.label :password %>
+		<%#= f.label :password %>
 	</li>
 	<li class='bwchild'>	
-		<%= f.password_field :password, class: 'field' %>
+		<%#= f.password_field :password, class: 'field' %>
 	</li>		
-		<%= link_to "(forgot password)", forgot_password_path, class: "mar30px-b" %>
+		<%#= link_to "(forgot password)", forgot_password_path, class: "mar30px-b" %>
 		
 	</li>
 	<li class='bwchild'>
-	<%= f.submit "Sign In", class: "" %>
+	<%#= f.submit "Sign In", class: "" %>
 	</li>
-<% end %>
-<p><%= link_to "Don't have a Pipeline account? Sign up Here", signup_path %></p>
+<%# end %>
+<p><%#= link_to "Don't have a Pipeline account? Sign up Here", signup_path %></p>
  </div>
+-->
