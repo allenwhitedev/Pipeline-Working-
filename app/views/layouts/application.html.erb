@@ -42,12 +42,12 @@
 </body>
 <div class="temp_devise_nav"><style>.temp_devise_nav {margin: 80px;}</style>
 <% if user_signed_in? %>
-  <%= link_to "Profile Settings", edit_user_registration_path %>
-  <%= link_to 'SignOut', destroy_user_session_path, method: :delete %>
+  <%#= link_to "Profile Settings", edit_user_registration_path %>
+  <%#= link_to 'SignOut', destroy_user_session_path, method: :delete %>
 <% else %>
-  <%= link_to 'SignUp', new_user_registration_path %>
-  <%= link_to 'SignIn', new_user_session_path %>
-  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+  <%#= link_to 'SignUp', new_user_registration_path %>
+  <%#= link_to 'SignIn', new_user_session_path %>
+  <%#= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 <% end %>
 </div>
 <%= render 'layouts/footer' %>

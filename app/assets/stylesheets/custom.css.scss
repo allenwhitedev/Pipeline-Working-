@@ -22,7 +22,12 @@ li a {
   text-align: center;
 }
 
-
+.tgrey {
+  color: grey;
+}
+.twhite {
+  color: white;
+}
 
 
 /* application-wide */
@@ -38,8 +43,8 @@ li a {
 
 
 body {
-	padding: 60px 0;
-	background-color: #E9EAEB;
+	padding: 2.5em 0;
+	background-color: #A1497B;
   overflow-y:hidden;
   /* #eeecef */	
   /* #DEDCDF */
@@ -129,6 +134,10 @@ body {
   font-size: 1.5em;
 }   
 
+.texts1-75 {
+  font-size: 1.75em;
+}
+
 
 #black-attempt {
 	color: red;
@@ -181,7 +190,7 @@ body {
 
 .field {
   border: 0px solid #fff;
-  border-bottom: 2px solid grey;
+  border-bottom: 1px solid grey;
   height: 2em;
 }
 

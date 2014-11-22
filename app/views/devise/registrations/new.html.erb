@@ -1,37 +1,57 @@
-<h2>Sign up</h2>
+<% provide(:title, "Sign Up") %>
+<div class='ccontainer centext'>
+<style>.ccontainer, .field {background: #A1497B; color: #fff;}
+ .field {width: 70%; font-size: 1em; margin: 28px 0;} .mfooter, .mheader {display: none;}
+  .name_field {margin-top: 0px;}
+ </style>
+
+
+<style>.field:focus {width: 80%; font-size: 1.75em; color: #fff;}</style>
+<style>input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;  
+    border-bottom: 1px solid #fff;
+}</style>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
 
 
-  <div class="field margy"><style>.margy {margin: 50px 0;}</style>
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div>
+  <li class='bwchild text1-5'>
+    <%= f.text_field :name, autofocus: true, placeholder: "Name",  class: "field name_field" %>
+  </li>
 
 
-  <div class="field margy">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
 
-  <div class="field margy">
-    <%= f.label :password %>
+  <li class='bwchild'>
+    <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "field" %>
+  </li>
+
+  <li class='bwchild'>
     <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off", 
+    placeholder: "Password #{@minimum_password_length} characters min.", class: "field" %>
+  </li>
 
-  <div class="field margy">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+  <li class='bwchild'>
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Sign Up", class: "field" %>
+  </li>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <li class='bwchild'>
+    <%#= f.submit "Sign up" %>
+  </li>
 <% end %>
+<li class='or'>or</li>
+<li>
+ <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "fb-btn" %>
+ <style>.fb-btn {font-size: 1.65em; color: #fff; padding: 3px 6px; border: 1px solid #fff;}
+ .or {color: #C1C1AF; font-size: 1.2em; margin-bottom: 40px;}
+ </style>
+</li>
 
-<%= render "devise/shared/links" %>
+<%#= render "devise/shared/links" %>
+</div>
