@@ -4,7 +4,7 @@
 
 .calheader {
 	text-align: center;
-	margin: 10px 0;
+	margin: 25px auto;
 }
 
 .cal-row {
@@ -31,4 +31,34 @@
 .cal-dow {
 	@include flexbox-flex(1);
 	margin: -1px 0;
+}
+
+.event_creator, .event_creator_alt {
+	height: 2.5em;
+	width: 2.25em;
+	background: #FFFF94;
+	margin: 1.25em calc(-1.25em + 1px) auto auto;
+	float: right;	
+}
+
+.string_short, .string_short_alt {
+  background: #fff;
+  width: 1px;
+  height: 1.25em;
+  float: right;
+  margin-right: 2em;
+}
+
+.string_short_alt {
+	float: left;
+	margin-right: auto;
+	margin-left: 2em;
+		visibility: hidden;
+}
+
+.event_creator_alt {
+	float: left;
+	margin-right: 0;
+	margin-left: calc(-1.25em + 1px);
+	visibility: hidden;
 }
