@@ -2,16 +2,14 @@
 <% provide(:title, "Groups") %>
 <div class="ccontainer">
 <div class="content_container">
-
-<div class='centext marg-1rem'>
-<li><%= link_to "Make New Group", organizations_signup_path, class: "blue_btn" %></li>
+<div class="string centext">|<br>|</div>
+<div class='centext'>
+<li class='mar30px-b'><%= link_to "Make New Group", organizations_signup_path, class: "blue_btn" %></li>
 </div>
 
 <%= will_paginate %>
 
-
 <%= render @organizations %>
-
 
 <%= will_paginate %>
 </div>

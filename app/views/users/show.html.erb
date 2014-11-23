@@ -1,17 +1,22 @@
+<!-- Show @user.name if it's truncated, else don't show it -->
+
 <% provide(:title, @user.name) %>
 <div class="ccontainer">
 	
 	    <div class="bwell centext">
+	    <!--
 	      <li class='bwchild'>
 	        <%#= gravatar_for @user %> 
-	        <%= @user.name %> (<%= @user.total_points %> pts)
+	        <%#= @user.name %> 
 	        </li>
+				-->
+<div class='bwchild'><%= image_tag('hsa.jpg', class: 'org-img-full bwchild', :alt => 'org-img') %></div>
 
-	        <li class='bwchild'>
+
+	        <li class='bwchild pane'>
+	        	<%= link_to "Groups", root_path %>
 	        </li>
-	        <li class='bwchild'>
-	        </li><li class='bwchild'>
-	        </li>
+	        
 
 
 	        <li class='bwchild pane'>
@@ -28,17 +33,12 @@
 	        <%#= render 'shared/stats' %>
 	      	</li>
 	      	-->
-	        	
-	      
-	         <li class="bwchild pane blue">Organizations (Coming Soon)</li>
+	        		         
 	         <li class="bwchild pane"><%= link_to "Settings", edit_user_registration_path %></li>
            <li class="bwchild pane"><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
-	        
-	         	
-	         
-
 	    </div>
 	  
 	  
 	
 </div>
+<style>body{background: #fff;}</style>

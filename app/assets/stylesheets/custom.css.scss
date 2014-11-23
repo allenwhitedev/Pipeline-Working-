@@ -89,6 +89,10 @@ body {
   color: #fff;
 }
 
+.string {
+  color: #fff;
+}
+
 .org-img {
   margin: 5px;
   vertical-align: middle;
@@ -267,6 +271,8 @@ body {
 .pane {
   border-top: 1px solid #E9EAEB;
   border-bottom: 1px solid #E9EAEB;
+  height: 2rem;
+  line-height: 2rem;
 }
 
 /* Maybe have all red/green text stylings in two classes/ids and then comment them */

@@ -1,4 +1,4 @@
-
+<!-- DRY this when you get a chance, and take not of line 10 and 29 especially -->
 <style>h3 {text-align: center;}</style>
 <% if current_user.nil? || !current_user.moderator? %>
 
@@ -7,7 +7,7 @@
         <%= render 'shared/stats' %>
        
     
-      <h3 class='centext'><%= @organization.name %> Members</h3>
+      <h3 class='centext'><%= @organization.name %> Members  (<%= @organization.joiners.count %>)</h3>
       <% if @users.any? %>
       <div class='center-wrapper'>
         <ul class="users">
@@ -26,7 +26,7 @@
       <section>
         <%= render 'shared/stats' %>         
       </section>
-   <h3 class='centext'><%= @organization.name %> Members</h3>
+   <h3 class='centext'><%= @organization.name %> Members (<%= @organization.joiners.count %>  )</h3>
 
     <div class='bwell'>
       <% if @users.any? %>
