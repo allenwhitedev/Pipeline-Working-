@@ -2,8 +2,10 @@
 <% provide(:title, "Groups") %>
 <div class="ccontainer">
 <div class="content_container">
-<h1 class='centext text1-5'>Pipeline Organizations</h1>
-<h2 class='centext'><%= link_to "Add An Organization", organizations_signup_path, class: "btn btn-large btn-primary" %></h2>
+
+<div class='centext marg-1rem'>
+<li><%= link_to "Make New Group", organizations_signup_path, class: "blue_btn" %></li>
+</div>
 
 <%= will_paginate %>
 

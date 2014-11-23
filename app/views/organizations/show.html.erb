@@ -15,7 +15,9 @@
 <% else %>
 	<%= form_for(current_user.ou_rels.build(joined_id: @organization.id)) do |f| %>
   	<div><%= f.hidden_field :joined_id %></div>
-  	<%= f.submit "Join This Organization", class: "btn btn-large btn-primary" %>
+  	<div class='bwchild centext'>
+  	<li><%= f.submit "Join Group", class: "blue_btn" %></li>
+  	</div>
 	<% end %>
 <% end %>
 </div>

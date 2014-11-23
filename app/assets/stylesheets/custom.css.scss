@@ -5,6 +5,7 @@
 li {
   list-style: none;
   font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
 }
 
 li a {
@@ -34,11 +35,11 @@ li a {
 
 
 /* alerts */
-.alert { background: yellow; color: red; height: 3em; line-height: 3em; }
+.alert { background: rgba(181, 100, 255, 0.4); color: #A1497B; height: 2em; line-height: 2em; }
 
 .alert-success { background: green; color: blue; }
 
-.alert-success { background: rgba(181, 100, 255, 0.4); color: #A1497B  }
+.alert-success { background: rgba(181, 100, 255, 0.4); color: #A1497B;  }
 
 
 
@@ -78,6 +79,14 @@ body {
 .alert{
   margin: 0 auto;
   text-align: center;
+}
+
+.blue_btn {
+  background: #66B2FF;
+  text-decoration: none;
+  border-radius: 2px;
+  padding: 4px 7px;
+  color: #fff;
 }
 
 .org-img {
@@ -136,6 +145,10 @@ body {
 
 .texts1-75 {
   font-size: 1.75em;
+}
+
+.marg-1rem {
+  margin: 1rem;
 }
 
 
