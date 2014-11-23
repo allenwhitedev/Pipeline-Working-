@@ -10,8 +10,8 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <li class='bwchild text1-5'>
-    <%= f.text_field :name, autofocus: true, placeholder: "Name",  class: "field name_field" %>
+  <li class='bwchild'>
+    <%= f.text_field :name, autofocus: true, placeholder: "Name",  class: "field" %>
   </li>
 
   <li class='bwchild'>
