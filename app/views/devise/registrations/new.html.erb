@@ -1,30 +1,18 @@
-<% provide(:title, "Sign Up") %>
-<div class='ccontainer centext'>
-<style>.ccontainer, .field {background: #A1497B; color: #fff;}
- .field {width: 70%; font-size: 1em; margin: 28px 0;} .mfooter, .mheader {display: none;}
-  .name_field {margin-top: 0px;}
- </style>
+<% provide(:title, "") %>
+<div class='ccontainer centext signup-wrapper'>
 
+<li>
+ <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "fb_btn" %>
+</li>
 
-<style>.field:focus {width: 80%; font-size: 1.75em; color: #fff;}</style>
-<style>input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;  
-    border-bottom: 1px solid #fff;
-}</style>
+<li class='or'>or</li>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-
-
   <li class='bwchild text1-5'>
     <%= f.text_field :name, autofocus: true, placeholder: "Name",  class: "field name_field" %>
   </li>
-
-
 
   <li class='bwchild'>
     <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "field" %>
@@ -38,20 +26,14 @@ button:focus {
   </li>
 
   <li class='bwchild'>
-    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Sign Up", class: "field" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirmation", class: "field" %>
   </li>
 
   <li class='bwchild'>
-    <%#= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "signup_btn" %>
   </li>
 <% end %>
-<li class='or'>or</li>
-<li>
- <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "fb-btn" %>
- <style>.fb-btn {font-size: 1.65em; color: #fff; padding: 3px 6px; border: 1px solid #fff;}
- .or {color: #C1C1AF; font-size: 1.2em; margin-bottom: 40px;}
- </style>
-</li>
 
 <%#= render "devise/shared/links" %>
 </div>
+<style> .mfooter, .mheader {display: none;} body {background: #A1497B; margin-top: 1.75rem;} </style>
