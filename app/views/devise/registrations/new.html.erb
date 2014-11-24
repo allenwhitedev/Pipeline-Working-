@@ -36,4 +36,45 @@
 
 <%#= render "devise/shared/links" %>
 </div>
-<style> .mfooter, .mheader {display: none;} body {background: #A1497B; margin-top: 1.75rem;} </style>
+<style> .mfooter, .mheader {display: none;} body {background: #A1497B; margin-top: 1.75rem;} 
+@-webkit-keyframes color_fade {
+   0%  { background: #A1497B; }
+  20%  { background: rgb(178,88,53); }
+  40%  { background: rgb(178,146,53); }
+  60%  { background: rgb(53,160,178); }
+  80%  { background: rgb(123, 178, 53); }
+  100% { background: rgb(53, 178, 130); }
+}
+@-moz-keyframes color_fade {
+   0%  { background: #A1497B; }
+  20%  { background: rgb(178,88,53); }
+  40%  { background: rgb(178,146,53); }
+  60%  { background: rgb(53,160,178); }
+  80%  { background: rgb(123, 178, 53); }
+  100% { background: rgb(53, 178, 130); }
+}
+@-o-keyframes color_fade {
+   0%  { background: #A1497B; }
+  20%  { background: rgb(178,88,53); }
+  40%  { background: rgb(178,146,53); }
+  60%  { background: rgb(53,160,178); }
+  80%  { background: rgb(123, 178, 53); }
+  100% { background: rgb(53, 178, 130); }
+}
+@keyframes color_fade {
+   0%  { background: #A1497B; }
+  20%  { background: rgb(178,88,53); }
+  40%  { background: rgb(178,146,53); }
+  60%  { background: rgb(53,160,178); }
+  80%  { background: rgb(123, 178, 53); }
+  100% { background: rgb(53, 178, 130); }
+}
+
+body, .field, .signup_btn {
+  -webkit-animation: color_fade 50s infinite alternate backwards; 
+  -moz-animation: color_fade 50s infinite; 
+  -o-animation: color_fade 50s infinite;  
+  animation: color_fade 50s infinite; 
+}
+
+</style>
