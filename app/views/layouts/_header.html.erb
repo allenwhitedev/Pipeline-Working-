@@ -1,4 +1,4 @@
-      <div class='mheader' id="color_changable" onclick='changeColor()' onload="applyColor()">
+      <div class='mheader' id="color_changable" onclick="changeColor()" onload="applyColor()">
          <%= link_to events_path, class: "mhnav back_button" do %>
               <i class="fa fa-angle-left mheadtext"></i>
             <% end %>
@@ -8,7 +8,7 @@
             
         
         <%= link_to '#', class: "mhnav TBN"  do %>
-              <i class="color_btn bwchild", onclick="changeColor()"></i>
+              <i class="color_btn bwchild", onclick="changeColor()" onload="applyColor()"></i>
             <% end %>
         
 
