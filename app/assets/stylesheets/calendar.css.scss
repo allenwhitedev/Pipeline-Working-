@@ -34,17 +34,18 @@
 }
 
 .event_creator, .event_creator_alt {
+	padding-top: 5px;
 	height: 2.5em;
 	width: 2.25em;
-	background: #FFFF94;
-	margin: 1.25em calc(-1.25em + 1px) auto auto;
+	background: #fff;
+	margin: 1em calc(-1.25em + 1px) auto auto;
 	float: right;	
 }
 
 .string_short, .string_short_alt {
-  background: #fff;
+  background: #46423D;
   width: 1px;
-  height: 1.25em;
+  height: 1em;
   float: right;
   margin-right: 2em;
 }
