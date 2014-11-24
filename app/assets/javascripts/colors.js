@@ -2,7 +2,7 @@
 //Custom below
 function applyColor()
 {
-	document.getElementById("a").style.background = localStorage.getItem("savedColor");
+	document.getElementById("color_changable").style.background = localStorage.getItem("savedColor");
 }
 
 function changeColor()
@@ -10,6 +10,6 @@ function changeColor()
 	if (typeof(Storage) != "undefined")
 	{
   	localStorage.setItem("savedColor", Please.make_color());
-		document.getElementById("a").style.background = localStorage.getItem("savedColor");
+		document.getElementById("color_changable").style.background = localStorage.getItem("savedColor");
 	} 
 }
