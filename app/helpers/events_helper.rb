@@ -23,6 +23,9 @@ module EventsHelper
       <li class='bwchild event_times'>
       Starts: #{time_tag(event.start_time)}<br>
       Ends: #{time_tag(event.end_time)}
+      <li class='bwchild'>
+      #{link_to('+', events_url, class: 'add_reminder')}
+      </li>
       </li></div>"
     end
     org_events

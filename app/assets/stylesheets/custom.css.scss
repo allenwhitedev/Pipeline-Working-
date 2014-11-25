@@ -228,6 +228,22 @@ body {
 
 /* events-comments */
 
+.add_reminder {
+  font-size: 2rem;
+  color: grey;
+  float: right;
+  font-weight: 700;
+  padding: 0px 5px;
+  margin: 0;
+  border: 2px solid grey;
+  text-align: right;
+  
+}
+
+.reminder_plus {
+  border: 2px solid grey; 
+}
+
 .points {
   color: grey;
   font-size: .8em;
