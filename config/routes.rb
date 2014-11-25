@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     root to: 'organizations#index'
   end
 
-  match '/add_reminder', to: 'users#add_reminder', via: 'patch'
+  match '/add_reminder', to: 'eu_rels#add_reminder', via: 'patch'
 
 
 

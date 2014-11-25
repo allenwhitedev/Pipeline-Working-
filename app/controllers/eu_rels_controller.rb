@@ -13,6 +13,21 @@ class EuRelsController < ApplicationController
     end
   end
 
+  def add_reminder
+    if EuRel.exists?(params[:event_id]) 
+      flash[:danger] = "Exists"
+      EuRel.find(params[:event_id]).update_attribute(:reminder, false)
+    else
+      flash[:danger] = "Doesn't exist"
+      #EuRel.find(params[:event_id]).update_attribute(:reminder, true)
+    end
+      respond_to do |format|
+      format.html { redirect_to @user }
+      format.js
+    end
+    #EuRel.find(params[:event][:attended_id]).update_attribute(:reminder, true)
+  end
+
   def destroy
     @event = EuRel.find(params[:id]).attended
     current_user.unattend!(@event)
