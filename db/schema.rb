@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121210221) do
+ActiveRecord::Schema.define(version: 20141125021016) do
 
   create_table "devise_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20141121210221) do
     t.integer  "attended_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "checked_in",  default: false
+    t.boolean  "reminder",    default: false
   end
 
   add_index "eu_rels", ["attended_id"], name: "index_eu_rels_on_attended_id"
