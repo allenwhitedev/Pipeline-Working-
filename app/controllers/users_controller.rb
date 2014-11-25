@@ -4,6 +4,16 @@ class UsersController < ApplicationController
   before_action :admin_user, only: [:destroy]
   before_action :get_user, only: [:reset_password, :reset_password_submit] #might have to remove for devise
 
+
+  def add_reminder
+    flash[:success] = "Hrmmm"
+    current_user.update_attribute(:total_points, 1000)
+    respond_to do |format|
+      format.html { redirect_to organizations_url }
+      format.js
+    end  
+  end
+
 	def create
 		@user = User.new(user_params)
 		if @user.save

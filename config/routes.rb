@@ -14,7 +14,9 @@ Rails.application.routes.draw do
     root to: 'organizations#index'
   end
 
-  
+  match '/add_reminder', to: 'users#add_reminder', via: 'patch'
+
+
 
   match '/pipeline', to: 'pages#pipeline', via: 'get'
   match '/calendar', to: 'pages#calendar', via: 'get'

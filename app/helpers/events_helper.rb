@@ -24,7 +24,8 @@ module EventsHelper
       Starts: #{time_tag(event.start_time)}<br>
       Ends: #{time_tag(event.end_time)}
       <li class='bwchild'>
-      #{link_to('+', events_url, class: 'add_reminder')}
+      #{link_to('+', add_reminder_path, class: 'add_reminder', remote: true)}
+      #{button_to('+', add_reminder_path(:event_id => event), method: :patch, remote: true) }
       </li>
       </li></div>"
     end
