@@ -36,6 +36,7 @@ class EventsController < ApplicationController
   end
 
    def show
+   	@back_page = events_path
   	@event = Event.find(params[:id])
   end
 

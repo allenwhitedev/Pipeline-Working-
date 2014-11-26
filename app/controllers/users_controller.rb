@@ -60,6 +60,7 @@ class UsersController < ApplicationController
   end
 
    def attending
+    @back_page = current_user
     @user = User.find(params[:id])
     @events = @user.attended_events.paginate(page: params[:page])
     render 'show_attend'

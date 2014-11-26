@@ -22,6 +22,7 @@ class OrganizationsController < ApplicationController
   end
 
   def show
+    @back_page = organizations_path
   	@organization = Organization.find(params[:id])
     joiners
   end
