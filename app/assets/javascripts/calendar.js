@@ -73,6 +73,7 @@ interact('.dropzone').dropzone({
         event.relatedTarget.classList.remove('can-drop');
     },
     ondrop: function (event) {
+        //### fill out date portion of datetime prompt with date the event_creator was dropped into 
         event.relatedTarget.textContent = 'Dropped';
     },
     ondropdeactivate: function (event) {
