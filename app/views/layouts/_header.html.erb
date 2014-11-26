@@ -3,13 +3,13 @@
           <%= link_to @back_page, class: "mhnav back_button" do %>
             <i class="fa fa-angle-left mheadtext"></i>
           <% end %>
-        <% else %> <% end %>
+        <% else %> <li class='mhnav'></li> <% end %>
         
           
               <li class='mhnav mheadtext curr_page' onclick="changeColor()"><%= yield :title %></li>
             
         
-        <%= link_to '#', class: "mhnav TBN"  do %>
+        <%= link_to '#', class: "mhnav searcher"  do %>
               <i class="color_btn bwchild"></i>
             <% end %>
   
