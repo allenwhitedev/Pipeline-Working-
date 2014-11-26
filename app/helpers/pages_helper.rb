@@ -21,11 +21,11 @@ module PagesHelper
 		#first row(w/ blank spaces)
 		cal += "<div class='cal-row'>"
 		day_of_week.times do |day|
-			cal += "<li class='cal-day'>&nbsp;</li>"
+			cal += "<li class='cal-day dropzone' id='inner-dropzone' '>&nbsp;</li>"
 			blank_counter += 1
 		end
 		(7- day_of_week).times do |day|
-			cal += "<li class='cal-day'>#{day+1}</li>"
+			cal += "<li class='cal-day dropzone' id='inner-dropzone' '>#{day+1}</li>"
 			counter += 1 
 		end
 		counter_offset = counter 
@@ -34,7 +34,7 @@ module PagesHelper
 		#second row
 		cal += "<div class='cal-row'>"
 		(7).times do |day|
-			cal += "<li class='cal-day'>#{day+counter_offset}</li>"
+			cal += "<li class='cal-day dropzone' id='inner-dropzone' '>#{day+counter_offset}</li>"
 			counter += 1 
 		end
 		counter_offset = counter
@@ -43,7 +43,7 @@ module PagesHelper
 		#third row
 		cal += "<div class='cal-row'>"
 		(7).times do |day|
-			cal += "<li class='cal-day'>#{day+counter_offset}</li>"
+			cal += "<li class='cal-day dropzone' id='inner-dropzone' '>#{day+counter_offset}</li>"
 			counter += 1  
 		end
 		counter_offset = counter
@@ -52,7 +52,7 @@ module PagesHelper
 		#fourth row(last row if first day of month is on Sunday but is filled up, so no issue :_)
 		cal += "<div class='cal-row'>"
 		(7).times do |day|
-			cal += "<li class='cal-day'>#{day+counter_offset}</li>"
+			cal += "<li class='cal-day dropzone' id='inner-dropzone' '>#{day+counter_offset}</li>"
 			counter += 1 
 		end
 		counter_offset = counter
@@ -62,7 +62,7 @@ module PagesHelper
 		if counter <= (month_days - 7) #<= rather than < because counter starts at 1, not 0 
 			cal += "<div class='cal-row'>"
 			(7).times do |day|
-				cal += "<li class='cal-day'>#{day+counter_offset}</li>"
+				cal += "<li class='cal-day dropzone' id='inner-dropzone' '>#{day+counter_offset}</li>"
 				counter += 1 
 			end
 			counter_offset = counter
@@ -73,17 +73,17 @@ module PagesHelper
 		#last row(w/ blank spaces)
 		cal += "<div class='cal-row'>"
 		(month_days - counter + 1).times do |day|
-			cal += "<li class='cal-day'>#{day+counter_offset}</li>"	
+			cal += "<li class='cal-day dropzone' id='inner-dropzone' '>#{day+counter_offset}</li>"	
 		end
 		
 		if blank_counter > 0 || month_days != 28
 			(35 - blank_counter - month_days).times do |day|
-				cal += "<li class='cal-day'>&nbsp;</li>"	
+				cal += "<li class='cal-day dropzone' id='inner-dropzone' '>&nbsp;</li>"	
 			end
 		end
 		if blank_counter + month_days > 35
 			(42 - blank_counter - month_days).times do |day|
-				cal += "<li class='cal-day'>&nbsp;</li>"
+				cal += "<li class='cal-day dropzone' id='inner-dropzone' '>&nbsp;</li>"
 			end			
 		end
 		cal += "</div>"
