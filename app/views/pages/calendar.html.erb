@@ -1,6 +1,6 @@
 <%= provide(:title, 'Home') %>
 <div class="string_short_alt"></div><div class="event_creator_alt"></div>
-<div class="string_short"></div><div class="event_creator centext" id="ec1" draggable="true">~~~<br>~~~</div>
+<div class="string_short"></div><div class="event_creator centext draggable" id="drag-me" draggable="true">~~~<br>~~~</div>
 <div class="calheader" id="drop-target-one">November<%#= Date::MONTHNAMES[@month] %> 2014 <%#= @year %></div>
 
 <%= calendar(@month-1, @year).html_safe %>
