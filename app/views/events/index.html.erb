@@ -4,15 +4,37 @@
 
 <%= render 'shared/event_form' %>
 
-<%= will_paginate %>
+<%#= will_paginate %>
 
 <% if !current_user.nil? %>
 <div class="content_container">
+		
+	<% current_user.ou_rels.each do |ou_rel| %>
+		<% organization = Organization.find(ou_rel.joined_id) %>
 	
-		<%= show_events_for_user(current_user).html_safe %>
-	
+		<% organization.reverse_oe_rels.each do |reverse_oe_rel| %>
+		 <%	event = Event.find(reverse_oe_rel.attender_id) %>
+			 
+			 <div class='bwell'>
+		      <li class='bwchild event_title'><%= link_to(event.title, event) %></li>
+		      <li class='bwchild'><%= link_to(image_tag('hsa.jpg', class: 'org-img', :alt => 'org-img'), 
+		        organization_url(organization.id)) %><span class='event_orga'>
+		        <%= organization.name %>(<%= event.points %> pts)
+		        </span>
+		      </li>
+		      <li class='event-desc bwchild'><%= event.comment %></li>
+		      <li class='bwchild event_times'>
+		      Starts: <%= time_tag(event.start_time) %><br>
+		      Ends: <%= time_tag(event.end_time) %>
+		      <li class='bwchild'>
+		      <%= link_to('+', add_reminder_path, class: 'add_reminder', remote: true) %>
+		      <%= button_to('+', add_reminder_path(:event_id => event), method: :patch, remote: true) %>
+		      </li>
+		      </li></div>
+		<% end %>
+	 <% end %>
 
-	<%= will_paginate %>
+	<%#= will_paginate %>
 
 <% else %>
 <% end %>

@@ -31,7 +31,7 @@ class EventsController < ApplicationController
 	end
 
 	def index
-  	@events = Event.paginate(page: params[:page])
+  	#@events = Event.paginate(page: params[:page])
   	@event = Event.new
   end
 

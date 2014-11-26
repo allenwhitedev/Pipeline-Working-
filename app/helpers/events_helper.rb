@@ -32,6 +32,22 @@ module EventsHelper
     org_events
   end
 
+  def get_events_for_user(user)
+    events_list = []
+    user.ou_rels.each do |ou_rel|
+      organization = Organization.find(ou_rel.joined_id)
+      events_list.push(show_events_for_org(organization))  
+    end  
+    events_list
+  end
+
+  def show_events_for_org(organization)
+    org_events = []
+    organization.reverse_oe_rels.each do |reverse_oe_rel|
+       org_events.push(Event.find(reverse_oe_rel.attender_id))
+    end
+    org_events
+  end
 
  
 
