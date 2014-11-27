@@ -14,9 +14,9 @@ class EuRelsController < ApplicationController
   end
 
   def add_reminder
-    if EuRel.exists?(params[:event_id]) 
+    if EuRel.exists?(attended_id: :event_id, attender_id: current_user.id) 
       flash[:danger] = "Exists"
-      EuRel.find(params[:event_id]).update_attribute(:reminder, true)
+      EuRel.find(attended_id: :event_id, attender_id: current_user.id).update_attribute(:reminder, true)
     else
       @event = Event.find(params[:event_id])
       current_user.remind_me!(@event)

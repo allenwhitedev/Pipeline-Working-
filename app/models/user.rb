@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
   end
 
   def remind_me!(fun_event)
-    new_eu_rel = eu_rels.create!(attended_id: fun_event.id)
+    new_eu_rel = eu_rels.create!(attended_id: fun_event.id, attender_id: current_user.id)
     new_eu_rel.update_attribute(:reminder, true)
   end
 
