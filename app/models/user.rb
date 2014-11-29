@@ -44,10 +44,10 @@ class User < ActiveRecord::Base
 
 	 # Attends an event
   def attend!(fun_event)
-    if !EuRel.find_by(attended_id: fun_event.id)
+    if !EuRel.find_by(attended_id: fun_event.id, attender_id: self.id)
       curr_eu_rel = eu_rels.create!(attended_id: fun_event.id)
     else
-      curr_eu_rel = EuRel.find_by(attended_id: fun_event.id)  
+      curr_eu_rel = EuRel.find_by(attended_id: fun_event.id, attender_id: self.id)  
     end
       @pluspoints = self.total_points += fun_event.points
       self.update_attribute(:total_points, @pluspoints)
@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
   end
 
   def remind_me!(fun_event)
-    new_eu_rel = eu_rels.create!(attended_id: fun_event.id, attender_id: current_user.id)
+    new_eu_rel = eu_rels.create!(attended_id: fun_event.id, attender_id: self.id)
     new_eu_rel.update_attribute(:reminder, true)
   end
 
